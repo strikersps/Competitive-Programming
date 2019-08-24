@@ -25,7 +25,6 @@ uint16_t find_meet_times(char[],char[]);
 int main(void) {
     uint64_t test;
     char start_time[STRING_LENGTH],end_time[STRING_LENGTH];
-    printf("Enter the number of test cases\n");
     scanf("%"SCNu64,&test);
     assert(test>0);
     for(uint16_t i=0;i<LOOK_UP_TABLE_LENGTH;++i) {
@@ -33,7 +32,6 @@ int main(void) {
         meet_times_lookup_table[i].min = ceil(MEET_TIME_CONSTANT_1*i); 
     }
     while(test--) {
-        printf("Enter the start-time & end-time\n");
         scanf("%s%s",start_time,end_time);
         printf("%"PRIu16"\n",find_meet_times(start_time,end_time));
     }

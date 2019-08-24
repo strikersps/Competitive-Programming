@@ -11,11 +11,9 @@ size_t compute_euler_totient(uint32_t);
 
 int main(void) {
     uint32_t n,test;
-    printf("Enter the number of test-cases\n");
     scanf("%d",&test);
     assert(test>0 && test<20001);
     while(test--) {
-        printf("Enter the value of n\n");
         scanf("%d",&n);
         assert(n>0 && n<1000001);
         printf("%ld\n",compute_euler_totient(n));
