@@ -1,5 +1,4 @@
 /*  Problem Statement: https://www.spoj.com/problems/AP2/
-    Date: 09 Aug 2019
     Author: Suraj Sharma
 */
 
