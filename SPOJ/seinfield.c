@@ -1,6 +1,5 @@
 /*  Problem Statement: https://www.spoj.com/problems/ANARC09A/
     Author: Suraj Sharma
-    Date: 05 Aug 2019
 */
 
 #include<stdio.h>
