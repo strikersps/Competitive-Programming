@@ -4,6 +4,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<inttypes.h>
 #include<math.h>
 #include<stdbool.h>
 #include<assert.h>
@@ -13,7 +14,7 @@ typedef long long ll;
 void print_series(ll,ll,ll); // Print the members of the series.
 
 int main(void) {
-    __uint16_t test;
+    uint16_t test;
     ll third_term,third_last_term,series_sum,no_of_terms,common_diff,first_term;
     fscanf(stdin,"%hd",&test);
     assert(test>0 && test<101);
