@@ -21,11 +21,11 @@ int main(void) {
             p -= 2048;
             ++min_menus;
         }
-        while(log2(p) > (uint32_t) log2(p)) {
+        while(p & (p-1)) {
             ++min_menus;
-            p = p % (uint32_t) pow(2,floor(log2(p)));
+            p = p % (1 << ((uint32_t) floor(log2(p))));
         }
-        if((!(log2(p) > (uint32_t) log2(p)))) {
+        if(!(p & (p-1))) {
             ++min_menus;
         }
         printf("%"PRIu32"\n",min_menus);
