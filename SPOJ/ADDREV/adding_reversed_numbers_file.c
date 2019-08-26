@@ -21,20 +21,15 @@ int main(int argc,const char*argv[]) {
     FILE *f_in = fopen("test_cases/input.txt","r");
     FILE *f_out = fopen("test_cases/output.txt","w");
     if(f_in && f_out) {
-        // printf("input.txt opened successfully\n");
         uint16_t test;
         fscanf(f_in,"%"SCNu16,&test);
-        // printf("Enter the number of test cases\n");
-        // scanf("%"SCNu16,&test);
         assert(test>0 && test<10001);
         while(test--) {
             char *first_num,*second_num,*sum;
             first_num = calloc(sizeof(char),STRING_LENGTH);
             second_num = calloc(sizeof(char),STRING_LENGTH);
             if(first_num && second_num) {
-                // printf("Enter the two positive integers\n");
                 fscanf(f_in,"%s%s",first_num,second_num);
-                // scanf("%s%s",first_num,second_num);
                 if(strlen(first_num) > 1) {
                     first_num = pre_process_number(first_num);
                     reverse_string(first_num);
