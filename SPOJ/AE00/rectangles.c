@@ -20,6 +20,8 @@ int main(void) {
 
 uint32_t find_number_rectangles(uint16_t n) {
     uint32_t ans = n;
-    for(uint16_t i=2;i<=floor(sqrt(n));ans += ((n/i) - (i - 1)),++i);
+    uint32_t n_rows = floor(sqrt(n));
+    for(uint16_t i=2;i<=n_rows;ans += (n/i),++i);
+    ans -= ((n_rows * (n_rows-1)) >> 1);
     return ans;
 }
