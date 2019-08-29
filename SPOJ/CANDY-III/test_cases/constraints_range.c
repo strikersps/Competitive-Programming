@@ -4,6 +4,7 @@
 #include<assert.h>
 
 int main(int argc,const char*argv[]) {
+    // Command-line arguments program which take one argument i.e name of the input file in .txt format.
     if(argc > 1) {
         FILE*f_in = fopen(argv[1],"r");
         if(f_in) {
