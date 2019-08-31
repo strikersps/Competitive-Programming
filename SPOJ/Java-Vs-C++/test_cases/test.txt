@@ -59,3 +59,7 @@ mnemonic_S
 _and_mnemonic
 _and_mnemonic_
 namEh_a
+w_w_W_W
+w_w_w_w
+isPrime
+is_prime
