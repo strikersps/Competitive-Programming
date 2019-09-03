@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.spoj.com/problems/AE00/
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>
