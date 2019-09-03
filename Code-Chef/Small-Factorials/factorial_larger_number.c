@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.codechef.com/problems/FLOW018
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>
