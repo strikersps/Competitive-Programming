@@ -1,5 +1,5 @@
 /*  Command-line arguments program which take one argument i.e name of the input file in .txt format.
-    Author: Suraj Sharma
+    Author: striker
 */
 #include<stdio.h>
 #include<stdlib.h>
