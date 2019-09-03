@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.spoj.com/problems/HANGOVER/
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>
