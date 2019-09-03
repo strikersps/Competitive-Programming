@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.spoj.com/problems/ADDREV/
-    Author: Suraj Sharma
+    Author: striker
     I/O: The input to the problem is through command line.
 */
 
