@@ -1,6 +1,6 @@
 /*  Problem Statement: https://www.spoj.com/problems/ADDREV/
-    Author: Suraj Sharma
-    I/O: The input to the program is through file named input.txt
+    Author: striker
+    I/O: The input to the program is through file named input.txt in directory test_cases/input.txt
 */
 
 #include<stdio.h>
