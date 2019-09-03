@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.spoj.com/problems/CANDY/
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>
@@ -17,11 +17,9 @@ int main(void) {
             uint16_t *chocolates_in_pack = calloc(sizeof(uint16_t),n);
             if(chocolates_in_pack) {
                 uint32_t total_chocolates = find_total_chocolates(chocolates_in_pack,n);
-                // printf("total_chocolates: %"PRIu32"\n", total_chocolates);
                 if(!(total_chocolates % n)) {
                     uint32_t min_number_of_moves = 0;
                     uint32_t mean = total_chocolates / n;
-                    // printf("avg_chocolates: %"PRIu32"\n",mean_chocolates);
                     for(uint16_t i=0;i<n;++i) {
                         if(chocolates_in_pack[i] > mean) {
                             min_number_of_moves += (chocolates_in_pack[i] - mean);
