@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.spoj.com/problems/HANDS/
-    Author: Suraj Sharma
+    Author: srtiker
 */
 
 #include<stdio.h>
