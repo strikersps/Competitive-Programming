@@ -1,5 +1,5 @@
 /*  Problem Statement: https://codeforces.com/problemset/problem/4/A
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>
