@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.hackerrank.com/challenges/grading/problem
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>

@@ -1,5 +1,5 @@
 /*  Problem Statement: https://www.hackerrank.com/challenges/camelcase/problem
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>

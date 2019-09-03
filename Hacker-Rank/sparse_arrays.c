@@ -1,13 +1,11 @@
 /*  Problem Statement: https://www.hackerrank.com/challenges/sparse-arrays/problem
-    Author: Suraj Sharma
+    Author: striker
 */
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<inttypes.h>
 #include<string.h>
-#include<math.h>
-#include<stdbool.h>
 #include<assert.h>
 
 #define COLUMNS 21
