@@ -17,12 +17,10 @@ void find_next_palindrome(char[]);
 
 int main(void) {
     uint64_t test;
-    // printf("Enter the number of test cases\n");
     scanf("%"SCNu64,&test);
     assert(test > 0);
     while(test--) {
         char number_base_10[STRING_LENGTH];
-        // printf("Enter the number\n");
         memset(number_base_10,'\0',(sizeof(char)*STRING_LENGTH));
         scanf("%s",number_base_10);
         uint32_t string_len = strlen(number_base_10);
