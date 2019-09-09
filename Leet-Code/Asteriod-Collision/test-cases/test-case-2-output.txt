@@ -1,0 +1,5 @@
+5 10
+NULL // Refer to the problem statement for return type for an empty array.
+10
+-2 -1 1 2
+-2 -2 -2
