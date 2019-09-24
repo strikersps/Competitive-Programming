@@ -11,7 +11,7 @@
 
 #define SEQUENCE_SIZE 2001
 
-uint64_t minimum_no_operation(char[]);
+const uint64_t minimum_no_operation(char[]);
 
 int main(void) {
     char bracket_seq[SEQUENCE_SIZE];
@@ -20,9 +20,9 @@ int main(void) {
     while(true) {
         ++test;
         scanf("%s",bracket_seq);
-        if(!(bracket_seq[0]=='-')) {
-            uint16_t len = strlen(bracket_seq);
-            if(!(len&1)) {
+        if(!(bracket_seq[0] == '-')) {
+            const uint16_t len = strlen(bracket_seq);
+            if(!(len & 1)) {
                 printf("%"PRIu16". %"PRIu64"\n",test,minimum_no_operation(bracket_seq));
             } else fprintf(stderr,"Length of the string should be even!\n");
         } else break;
@@ -30,10 +30,10 @@ int main(void) {
     return 0;
 }
 
-uint64_t minimum_no_operation(char bracket_seq[]) {
+const uint64_t minimum_no_operation(char bracket_seq[]) {
     uint16_t open_cnt,min_no_ops;
     open_cnt = min_no_ops = 0;
-    for(uint16_t i=0;bracket_seq[i]!='\0';++i) {
+    for(uint16_t i=0; bracket_seq[i] != '\0'; ++i) {
         if(bracket_seq[i] == '{') {
             ++open_cnt;
 	    } else {
