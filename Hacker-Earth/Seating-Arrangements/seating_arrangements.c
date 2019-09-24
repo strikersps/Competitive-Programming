@@ -11,12 +11,10 @@ void find_front_seat(uint8_t);
 
 int main(void) {
     uint32_t test;
-    printf("Enter the number of test-cases\n");
     scanf("%"SCNu32,&test);
     assert(test > 0 && test < 100001);
     while(test--) {
         uint8_t seat_no;
-        printf("Enter the seat number\n");
         scanf("%"SCNu8,&seat_no);
         assert(seat_no > 0 && seat_no < 109);
         find_front_seat(seat_no);
