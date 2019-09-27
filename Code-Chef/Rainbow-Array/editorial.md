@@ -56,5 +56,10 @@ if(length of the array < 13) {
         }
     }
 }
+if(is_rainbow) {
+    print yes
+} else {
+    printf no
+}
 ```
 
