@@ -1,3 +1,4 @@
+*   This is the editorial of the problem [Rainbow Array](https://www.codechef.com/problems/RAINBOWA).
 *   The given is: You are given an array and you need to tell       whether the array is a rainbow array or not.
 *   The definition/structure of the rainbow array is defined        in the problem statement as:  
 ```
