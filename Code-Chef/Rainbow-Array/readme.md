@@ -40,7 +40,7 @@ if(length of the array < 13) {
 } else if(there exists a missing number between [1,7]) { # You can check it by creating a separate array which store the frequency of numbers in the range [1,7].
     is_rainbow = false
 } else {
-    // Place two pointers at the start and end of the array.
+    # Place two pointers at the start and end of the array.
     start = 0, end = n - 1
     for i in length(1,7) {
         while((start <= end) and (array[start] == i and array[end] == i)) {
