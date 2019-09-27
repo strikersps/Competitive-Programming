@@ -1,4 +1,5 @@
-*   This is the editorial of the problem [Rainbow Array](https://www.codechef.com/problems/RAINBOWA).
+# Editorial for [Rainbow Array](https://www.codechef.com/problems/RAINBOWA) Problem on Code-Chef:  
+
 *   You are given an array and you need to tell       whether the array is a rainbow array or not.
 *   The definition/structure of the rainbow array is defined        in the problem statement as:  
 ```
@@ -29,8 +30,8 @@
         `2 * (a1 + a2 + a3 + a4 + a5 + a6) + a7 = n.`   
         Now in the problem statement it is given that, **ai** should be a non-zero value, implies minimum length of the array should be 13. i.e. If you want to check whether the given array is rainbow or not, it's length must be greater than 12.
 
-**Pseudocode:**  
-```
+## Pseudocode:  
+``` python
 bool is_rainbow = true
 if(length of the array < 13) {
     is_rainbow = false
@@ -52,7 +53,7 @@ if(length of the array < 13) {
         (iii) Value at start location or end location is less than the current value of 'i'
         If any of the above condition becomes true means array is not a rainbow array.
         */ 
-        if((start <= end) && ((array[start] != array[end]) || (array[start] > (i + 1)) || (array[end] > (i + 1)) || (array[start] < i) || array[end] < i)) {
+        if((start <= end) and ((array[start] != array[end]) or (array[start] > (i + 1)) or (array[end] > (i + 1)) or (array[start] < i) or array[end] < i)) {
             is_rainbow = false
         }
     }
@@ -63,4 +64,3 @@ if(is_rainbow) {
     printf no
 }
 ```
-
