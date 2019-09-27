@@ -1,5 +1,5 @@
 *   This is the editorial of the problem [Rainbow Array](https://www.codechef.com/problems/RAINBOWA).
-*   The given is: You are given an array and you need to tell       whether the array is a rainbow array or not.
+*   You are given an array and you need to tell       whether the array is a rainbow array or not.
 *   The definition/structure of the rainbow array is defined        in the problem statement as:  
 ```
     First a1 elements equal to 1.  
@@ -24,12 +24,12 @@
 *   From the above definition we can conclude that the array is said to be a rainbow array if it satifies the following conditions:  
     1.  The array should be palindrome.  
     2.  The array will only consist of the numbers between [1,7]. If the array contains a number greater than 7, then the array is not a rainbow array.  
-    3.  With respect to the middle element, the left-subarray should consists of sequence of numbers starting from 1 and can be repeated **ai** number of times & right-subarray should be the mirror image of the left-subarray.
+    3.  With respect to the middle element, the left-subarray should consist of sequence of numbers starting from 1 and can be repeated **ai** number of times & right-subarray should be the mirror image of the left-subarray.
     4.  As per the definition, the minimum length of the array can be calculated by using the formula:  
         `2 * (a1 + a2 + a3 + a4 + a5 + a6) + a7 = n.`   
-        Now in the problem statement it is given that, **ai** should be a non-zero value, implies minimum length of the array should be 13.
+        Now in the problem statement it is given that, **ai** should be a non-zero value, implies minimum length of the array should be 13. i.e. If you want to check whether the given array is rainbow or not, it's length must be greater than 12.
 
-Pseudocode:  
+**Pseudocode:**  
 ```
 bool is_rainbow = true
 if(length of the array < 13) {
