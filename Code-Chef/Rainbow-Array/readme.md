@@ -37,22 +37,23 @@ if(length of the array < 13) {
     is_rainbow = false
 } else if(there exists an number > 7) {
     is_rainbow = false
-} else if(there exists a missing number between [1,7]) { // You can check it by creating a separate array which store the frequency of numbers in the range [1,7].
+} else if(there exists a missing number between [1,7]) { # You can check it by creating a separate array which store the frequency of numbers in the range [1,7].
     is_rainbow = false
 } else {
     // Place two pointers at the start and end of the array.
     start = 0, end = n - 1
     for i in length(1,7) {
-        while((start <= end) and (array[start] == i && array[end] == i)) {
-            ++start;
-            --end;
+        while((start <= end) and (array[start] == i and array[end] == i)) {
+            start = start + 1;
+            end = end - 1;
         }
-        /* If the while() loop breaks on the basis of second condition, then you will check for the following scenarios:
+        '''
+        If the while() loop breaks on the basis of second condition, then you will check for the following scenarios:
         (i) Value at both the locations are same or not.
         (ii) Value at start location or end location is not in consecutive with its previous value.
         (iii) Value at start location or end location is less than the current value of 'i'
         If any of the above condition becomes true means array is not a rainbow array.
-        */ 
+        '''
         if((start <= end) and ((array[start] != array[end]) or (array[start] > (i + 1)) or (array[end] > (i + 1)) or (array[start] < i) or array[end] < i)) {
             is_rainbow = false
         }
