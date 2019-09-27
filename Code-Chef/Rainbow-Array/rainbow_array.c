@@ -10,10 +10,10 @@
 #include<math.h>
 #include<assert.h>
 
-#define ARRAY_LENGTH 10
+#define LIMIT 7
 
-void take_input(uint8_t *const,uint8_t,uint8_t[]);
-bool check_rainbow(uint8_t *const,uint8_t,uint8_t[]);
+bool take_input(uint8_t *const,uint8_t); // Returns true if the array consists of elements only between 1 and 7 other-wise returns false.
+bool check_rainbow(uint8_t *const,uint8_t);
 
 int main(void) {
     uint8_t test;
@@ -21,19 +21,23 @@ int main(void) {
     assert(test > 0 && test< 101);
     while(test--) {
         uint8_t n;
-        uint8_t freq_dist[ARRAY_LENGTH];
-        memset(freq_dist,0,(sizeof(uint8_t) * ARRAY_LENGTH));
         scanf("%"SCNu8,&n);
         assert(n > 6 && n < 101);
         uint8_t *const data = calloc(n,sizeof(uint8_t));
         if(data) {
-            take_input(data,n,freq_dist);
-            if(check_rainbow(data,n,freq_dist)) {
-                printf("yes\n");
+            if(!take_input(data,n)) {
+                if(n > 12) {
+                    if(check_rainbow(data,n)) {
+                        printf("yes\n");
+                    } else {
+                        printf("no\n");
+                    }
+                } else {
+                    printf("no\n");
+                }
             } else {
                 printf("no\n");
             }
-            free(data);
         } else {
             fprintf(stderr,"Memory not allocated to successfully to *data pointer!\n");
         }
@@ -41,28 +45,34 @@ int main(void) {
     return 0;
 }
 
-void take_input(uint8_t *const data,uint8_t n,uint8_t freq_dist[]) {
+bool take_input(uint8_t *const data,uint8_t n) {
+    bool is_exist = false;
     for(uint8_t i = 0; i < n; ++i) {
         scanf("%"SCNu8,&data[i]);
-        ++freq_dist[data[i] - 1];
+        if(data[i] > LIMIT) {
+            is_exist = true;
+        } 
     }
+    return is_exist;
 }
 
-bool check_rainbow(uint8_t *const data,uint8_t n,uint8_t freq_dist[]) {
+bool check_rainbow(uint8_t *const data,uint8_t n) {
     bool is_rainbow = true;
-    if(!(freq_dist[0] && freq_dist[1] && freq_dist[2] && freq_dist[3] && freq_dist[4] && freq_dist[5] && freq_dist[6])) {
-        is_rainbow = false;
+    uint8_t freq_dist[LIMIT];
+    memset(freq_dist,0,(sizeof(uint8_t)*LIMIT));
+    for(uint8_t i = 0; i < n; ++i) {
+        ++freq_dist[data[i] - 1];
     }
-    else if(freq_dist[ARRAY_LENGTH - 3] || freq_dist[ARRAY_LENGTH - 2] || freq_dist[ARRAY_LENGTH - 1]) {
+    if(!(freq_dist[0] && freq_dist[1] && freq_dist[2] && freq_dist[3] && freq_dist[4] && freq_dist[5] && freq_dist[6])) {
         is_rainbow = false;
     } else {
         uint8_t start = 0, end = (n - 1);
-        for(uint8_t i = 0; i < (ARRAY_LENGTH - 3); ++i) {
-            while((start <= end) && ((data[start] == (i + 1)) && (data[end] == (i + 1)))) {
+        for(uint8_t i = 1; i <= LIMIT; ++i) {
+            while((start <= end) && ((data[start] == i) && (data[end] == i))) {
                 ++start;
                 --end;
             }
-            if((data[start] != data[end]) || ((data[start] > (i + 2)) || (data[end] > (i + 2))) || (data[start] < i || data[end] < i)) {
+            if((start <= end) && ((data[start] != data[end]) || ((data[start] > (i + 1)) || (data[end] > (i + 1))) || (data[start] < i || data[end] < i))) {
                 is_rainbow = false;
             }
         }
