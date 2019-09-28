@@ -8,7 +8,7 @@
 #include<stdbool.h>
 #include<assert.h>
 
-#define LENGTH 70
+#define LENGTH 60
 
 typedef unsigned long long ull_t;
 typedef unsigned long ul_t;
