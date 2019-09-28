@@ -29,7 +29,6 @@ int main(void) {
         } else {
             preserved_index = n;
         }
-        
         if(preserved_index > 60) {
             preserved_index %= 60;
         }
@@ -43,7 +42,10 @@ unsigned short int* generate_fibonacci(void) {
     fib[0] = 0;
     fib[1] = 1;
     for(unsigned short int i = 2; i < LENGTH; ++i) {
-        fib[i] = (fib[i - 1] + fib[i - 2]) % 10;
+        fib[i] = fib[i - 1] + fib[i - 2];
+        if(fib[i] > 9) {
+            fib[i] %= 10;
+        }
     }
     return fib;
 }
