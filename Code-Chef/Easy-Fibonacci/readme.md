@@ -55,6 +55,6 @@ E.g n = 4503599627370496 (2 ^ 52) => log2(n) = 52, but when n = 4503599627370495
 ```
 So to remove this error, you can use the `log2l()` function defined in `math.h` library of C/C++.  
 ```
-Time-Complexity: O(T * (log2(`n`))) + O(Z), where Z = 60.  
+Time-Complexity: O(T * (log2(n))) + O(Z), where Z = 60.  
 Space-Complexity: O(60) where Z = 60.  
 ```
