@@ -3,7 +3,7 @@
 *   **Problem Statement:** You are given a Fibonacci Sequence, and you need to find the member of the sequence which will be preserved when the following operation is executed on the sequence:  
     - Delete the data which is stored at the odd location of the sequence.  
     - Do this operation until only one member of the sequence is left.  
-    Print that member.
+    After doing the above operation, print the left member.
 
 *   The problem is straight forward, but as the constraints is large, you need to think of an algorithm which will solve the problem in the given time-constraint.  
 Given Constraints are:  
