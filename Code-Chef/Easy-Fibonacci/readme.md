@@ -41,7 +41,7 @@ Now you can calculate the answer in constant time as follows:
     if(index_val > 60) {
         index = index % 60
     }
-    print the value stored at the (index - 1) location in the array of Fibonacci numbers, and that will the answers.
+    print the value stored at the (index - 1) location in the array of Fibonacci numbers, and that will be the answer.
 ```
 
 ## NOTE
