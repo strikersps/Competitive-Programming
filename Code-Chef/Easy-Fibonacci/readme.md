@@ -45,13 +45,13 @@ Now you can calculate the answer in constant time as follows:
 ```
 
 ## NOTE
-The bottleneck of the above algotithm is to calculate the value of log2(`n`) correctly.  
+The bottleneck of the above algotithm is to calculate the value of `log2(n)` correctly.  
 I have developed the solution in C-programming, and if you are also using the same, then use the `log2l()` function rather than `log2()` function because the signature is `long double log2l(long double)` means it can calculate the `log2` value of large numbers in the range of `[1,10^18]` which `log2()` will not be able to.  
 
-If you use `log2()` for calculation, you code will only pass the first sub-task of the problemm.  
-I won't be able to pass the second sub-task because of the precision error arising due to use of the `log2()` function.  
+If you use `log2()` for calculation, your code will only pass the first sub-task of the problem.  
+It won't be able to pass the second sub-task due to the precision error arised from the use of the `log2()` function.  
 ```
-E.g `n` = 4503599627370496 (2 ^ 52) => log2(`n`) = 52, but when `n` = 4503599627370496 ((2 ^ 52) - 1) => log2(`n`) = 52, which is wrong rather the right answer is 51.  
+E.g n = 4503599627370496 (2 ^ 52) => log2(n) = 52, but when n = 4503599627370495 ((2 ^ 52) - 1) => log2(n) = 52, which is wrong rather it should give 51.  
 ```
 So to remove this error, you can use the `log2l()` function defined in `math.h` library of C/C++.  
 ```
