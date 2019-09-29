@@ -21,8 +21,8 @@ if(n bitwise AND (n - 1)) {
 } else {
     The value at location n will be preserved after the operation.
 }
-- (n bitwise AND (n - 1)) -> True means n cannot be expressed as 2^`n`.
-- (n bitwise AND (n - 1)) -> False means n can be expressed in the form of 2^n.
+- (n bitwise AND (n - 1)) -> True means n cannot be expressed as 2^n.
+- (n bitwise AND (n - 1)) -> False means n can be expressed as 2^n.
 ```
 
 Now, as the value of `n` can be as large as `10^18`, so obviously you cannot use a `O(n)` time algorithm to compute every Fibonacci Number.  
