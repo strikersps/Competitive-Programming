@@ -42,6 +42,7 @@ int main(void) {
 }
 
 void take_input(uint32_t *const data,uint32_t n) {
+    printf("Enter the members of the array\n");
     for(uint32_t i = 0; i < n; ++i) {
         scanf("%"SCNu32,&data[i]);
         assert(data[i] > 0);
