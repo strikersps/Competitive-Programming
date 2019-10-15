@@ -16,7 +16,7 @@ For `n = 5`: ans = 44.
 If you observe carefully, you will see that you have sequence of numbers for each `n` value i.e.  
 
 | n-values | No. of Ways |
-| ---      | ---       |
+| :---:      | :---:       |
 | 1 | 1 |
 | 2 | 1 |
 | 3 | 2 |
