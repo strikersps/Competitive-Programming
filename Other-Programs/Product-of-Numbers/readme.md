@@ -6,4 +6,4 @@ For example:
 2.  Input: `[3, 2, 1]`  
     Expected output: `[2, 3, 6]`.
 
-Solve the problem without using division.  
+**Solve the problem without using division.**
