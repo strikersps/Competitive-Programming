@@ -1,4 +1,4 @@
-/*  You can refer to the screen-shot in the directory for the problem statement.
+/*  You can refer to the screen-shot on the link (https://github.com/strikersps/Competitive-Programming/blob/master/Other-Programs/Common-Prime/Common-Prime-Problem-Statement.jpg) for the problem statement.
     Problem was asked in JP Morgan Chase Online Programming Challenge.
     Author: striker
 */
