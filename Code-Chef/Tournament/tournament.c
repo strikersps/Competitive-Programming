@@ -101,21 +101,12 @@ void merge_data(size_t *const data,size_t start,size_t mid,size_t end) {
 }
 
 const ull_t compute_total_advertising_revenue(size_t *const data,size_t n) {
-    ull_t *const right_prefix_sum = calloc(n,sizeof(ull_t));
-    // Storing the prefix sum from the right till ith location.
-    if(right_prefix_sum) {
-        ull_t cummulative_sum = 0;
-        for(int i = (n - 1); i >= 0; --i) {
-            cummulative_sum += data[i];
-            right_prefix_sum[i] = cummulative_sum;
-        }
-    } else {
-        fprintf(stderr,"Memory not allocated to *right_prefix_sum pointer!\n");
-    }
+    ull_t cummulative_sum = 0;
+    for (size_t i = 0; i < n; cummulative_sum += data[i],i++);    
     ull_t total_advertising_rev_earned = 0;
     for(size_t i = 0; i < (n - 1); ++i) {
-        total_advertising_rev_earned += abs((data[i] * (n - (i + 1))) - right_prefix_sum[i + 1]);
+        cummulative_sum -= data[i];
+        total_advertising_rev_earned += abs((data[i] * ((n - 1) - i)) - cummulative_sum);
     }
-    free(right_prefix_sum);
     return total_advertising_rev_earned;
 }
