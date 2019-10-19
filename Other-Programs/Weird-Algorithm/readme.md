@@ -16,12 +16,13 @@ Print a line that contains all values of `n` during the algorithm.
 **Constraints**  
 1 ≤ n ≤ 1000000  
 
-| Time Limit| Memory |
-| --------- | -------|
-| 1.00 sec  | 512 MB |
-
 **Example**  
 Input:
 3  
 Output:
-3 10 5 16 8 4 2 1
+3 10 5 16 8 4 2 1  
+
+
+| Time Limit| Memory |
+| --------- | -------|
+| 1.00 sec  | 512 MB |
