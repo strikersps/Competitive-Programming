@@ -6,9 +6,7 @@ Author: striker
 def main():
     test = int(input())
     for _ in range(test):
-        a,b = tuple(input().split())
-        a = int(a)
-        b = int(b)
+        a,b = tuple(map(int,input().split()))
         if a == b:
             print("=")
         elif a > b:
