@@ -12,15 +12,11 @@ def compute_product(data):
 def main():
     test = int(input())
     for _ in range(test):
-        n,q = tuple(input().split())
-        data = list()
-        for i in (input().split()):
-            data.append(int(i))
-        query = list()
-        for i in (input().split()):
-            query.append(int(i))
+        n,q = tuple(map(int,input().split()))
+        data = list(map(int,input().split()))
+        query = list(map(int,input().split()))
         product = compute_product(data)
-        for i in range(int(q)):
+        for i in range(q):
             if query[i] < product:
                 print(0, end = ' ')
             else:
