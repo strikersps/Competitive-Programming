@@ -58,8 +58,8 @@ void transform_to_rpn(char *const expression) {
             ++j;
         }
     }
-    rpn_form[expression_length] = '\0';
     delete_stack(&head);
+    rpn_form[expression_length] = '\0';
     puts(rpn_form);
 }
 
@@ -85,7 +85,7 @@ void push_data(node_t **head,char data) {
 }
 
 char pop_data(node_t **head) {
-    char optr = '\0';
+    char optr;
     if(*head) {
         node_t *del_node = (*head);
         optr = (*head)->operator;
