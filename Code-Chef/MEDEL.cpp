@@ -1,3 +1,5 @@
+/*https://www.codechef.com/COOK111B/problems/MDL/*/
+/*AUthor:-invictus1599*/
 #include <iostream>
 using namespace std;
 int del(int a[],int x,int n){
