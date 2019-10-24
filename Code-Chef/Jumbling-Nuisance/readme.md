@@ -31,9 +31,9 @@ If you look at the **No.of Ways** column you will see a pattern i.e.
 
 ```
     if (n & 1):
-        ans = (ans[n - 1] * n) - 1 // If n is even
+        ans = (ans[n - 1] * n) - 1 // If n is odd
     else:
-        ans = (ans[n - 1] * n) + 1 // If n is odd
+        ans = (ans[n - 1] * n) + 1 // If n is even
 ```
 
 Use the above recursive relation to arrive at the answer for any `n` which lies between `1 < n < 101`
