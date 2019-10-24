@@ -1,4 +1,4 @@
-# Editorial [Jumbling Nuisance](https://www.codechef.com/ICHN2019/problems/ICHN03) on Code-Chef.  
+# Editorial [Jumbling Nuisance](https://www.codechef.com/ICHN2019/problems/ICHN03) on Code-Chef
 
 #### Problem Statement:  
 Given a word of length `n`, in how many ways you can arrange the letters of the word so that no letter should end up at it's actual position.  
