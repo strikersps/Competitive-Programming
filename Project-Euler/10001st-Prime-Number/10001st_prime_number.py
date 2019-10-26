@@ -1,5 +1,5 @@
 '''
-Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler007/problem
+Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler007/problem or https://projecteuler.net/problem=7
 Author: striker
 '''
 
