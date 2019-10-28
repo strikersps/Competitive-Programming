@@ -1,5 +1,7 @@
 # Editorial for [Set Matrix Zeroes](https://leetcode.com/problems/set-matrix-zeroes/solution/)  
 
+**NOTE**: While submitting the code in Leet Code, you don't need to write the whole program, you just need the write the function, so, while referring to the code for this problem, refer to the function `void setZeroes(uint32_t **const matrix,uint32_t matrixSize,uint32_t *matrixColSize)` for the logic which I have implemented.  
+
 The question seems to be pretty simple but the trick here is that we need to modify the given matrix in place i.e. our space complexity needs to `O(1)`.
 
 We will go through two different approaches to the question. The first approach makes use of additional memory while the other one don't.  
@@ -30,6 +32,7 @@ if(!matrix[i][j]) {
         }
     }
 ```  
+ The commented part of the code implements this algorithm.  
 
 **Complexity Analysis**
 
@@ -64,6 +67,3 @@ Note the first row and first column serve as the `row_zeroes` and `col_zeroes` t
 Time Complexity : `O(M×N)`.  
 Space Complexity : `O(1)`.  
 where `M` and `N` are the number of rows and columns respectively.  
-
-
-
