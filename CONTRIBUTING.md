@@ -9,5 +9,3 @@ If you want to contribute to this repository, you are more than welcome, please 
     * Problem Link  
     * Author's name. 
 (You can refer to some of the codes in the repository)
-
-#### As a programmer I firmly believe in "Writing Clean and Easy to Understand Code" and if you are contributing to this repository, I hope you will also share the same vision.
