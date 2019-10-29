@@ -27,6 +27,5 @@ def main():
         n = int(input())
         print(prime_numbers[n - 1])
 
-
 if __name__ == "__main__":
     main()
