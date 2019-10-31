@@ -39,12 +39,8 @@ const uint32_t compute_stirling_number_of_second_kind(uint32_t n,uint32_t m) {
                 data_storage[j] = (((j % 2) * (data_storage[j] % 2)) + (data_storage[j - 1] % 2)) % 2;
             }
         }
-        for(uint32_t i = 0; i < n; ++i) {
-            printf("%"PRIu32" ", data_storage[i]);
-        }
-        printf("\n");
     }
-    uint32_t ans = data_storage[m];
+    uint32_t ans = data_storage[m - 1];
     free(data_storage);
     return ans;
 }
