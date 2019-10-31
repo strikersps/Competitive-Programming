@@ -28,6 +28,7 @@ int main(int argc,char *const argv[]) {
             for(int i = 0; i < 10; ++i) {
                 fprintf(test_file,"%llu\n",(rand() % MAX_LIMIT));
             }
+            fclose(test_file);
         } else {
             fprintf(stderr,"File not opened successfully\n");
             return EXIT_FAILURE;
