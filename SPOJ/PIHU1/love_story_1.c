@@ -8,8 +8,6 @@
 #include<stdbool.h>
 #include<assert.h>
 
-#define NOT_FOUND -1
-
 const bool check_sorted(uint32_t *const,uint16_t);
 void merge_sort(uint32_t *const,uint16_t,uint16_t);
 void merge_data(uint32_t *const,uint16_t,uint16_t,uint16_t);
