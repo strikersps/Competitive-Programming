@@ -10,12 +10,12 @@
 #include<assert.h>
 
 #define BANK_ACCNT_LENGTH 32
-#define CONTROL_DIGIT_LEGNTH 3
+#define CONTROL_DIGIT_LENGTH 3
 #define BANK_CODE_LENGTH 9
 #define OWNER_CODE_LENGTH 20
 
 typedef struct bank_accounts {
-    char control_digit[CONTROL_DIGIT_LEGNTH];
+    char control_digit[CONTROL_DIGIT_LENGTH];
     char bank_code[BANK_CODE_LENGTH];
     char owner_code[OWNER_CODE_LENGTH];
 } bank_accounts_t;
