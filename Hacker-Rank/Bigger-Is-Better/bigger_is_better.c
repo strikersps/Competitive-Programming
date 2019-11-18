@@ -33,14 +33,14 @@ int main(void) {
 static const bool generate_next_permutation(char word[]) {
     int32_t i,j;
     uint32_t word_len = strlen(word) - 1;
-    if(word_len == 0) {
+    if(!word_len) {
         return false;
     } else {
         for(i = word_len; (i > 0 && word[i - 1] >= word[i]); --i);
         if(!i) {
             return false; // If i == 0 implies there doesn't exist pair of numbers such that a[i - 1] > a[i] i.e given sequence is in increasing order.
         } else {
-            for(j = word_len; (j >= i && word[j] <= word[i - 1]); --j);
+            for(j = word_len; word[j] <= word[i - 1]; --j);
             swap_data(&word[j],&word[i - 1]);
             for(j = word_len; i < j; ++i,--j) {
                 swap_data(&word[i],&word[j]);
