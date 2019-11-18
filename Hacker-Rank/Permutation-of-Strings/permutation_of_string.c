@@ -2,7 +2,7 @@
     Author: striker
 */
 
-// Source Code is already given, I need to implement the int next_permutation(int,char**).
+// Source Code is already given, I need to implement the function int next_permutation(int,char**).
 
 #include <stdio.h>
 #include <stdlib.h>
