@@ -38,7 +38,7 @@ static const bool generate_next_permutation(char word[]) {
     } else {
         for(i = word_len; (i > 0 && word[i - 1] >= word[i]); --i);
         if(!i) {
-            return false; // If i == 0 implies there doesn't exist pair of numbers such that a[i - 1] > a[i] i.e given sequence is in increasing order.
+            return false; // If i == 0 implies there doesn't exist pair of numbers such that a[i - 1] > a[i] i.e given sequence is in decreasing order.
         } else {
             for(j = word_len; word[j] <= word[i - 1]; --j);
             swap_data(&word[j],&word[i - 1]);
