@@ -12,11 +12,11 @@
 // Print the next lexicographic permutation of the given string if it exists and return true else false.
 int next_permutation(int n, char **s) {
     int i,j;
-    if(n == 0) {
+    if(!n) {
         return false;
     } else {
         for(i = n - 1; (i > 0 && strcmp(s[i - 1],s[i]) >= 0); --i);
-        if(i == 0) {
+        if(!i) {
             return false;
         } else {
             for(j = n - 1; strcmp(s[j],s[i - 1]) <= 0; --j);
