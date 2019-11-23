@@ -34,16 +34,15 @@ typedef struct sentence sentence_t;
 typedef struct paragraph paragraph_t;
 typedef struct document document_t;
 
-document_t get_document(char*);
-word_t kth_word_in_mth_sentence_of_nth_paragraph(document_t,int,int,int);
-sentence_t kth_sentence_in_mth_paragraph(document_t,int,int);
-paragraph_t kth_paragraph(document_t,int);
-void print_word(word_t);
-void print_sentence(sentence_t);
-void print_paragraph(paragraph_t);
-void print_document(document_t);
-char* get_input_text(void);
-void free_memory(document_t*);
+static document_t get_document(char*);
+static word_t kth_word_in_mth_sentence_of_nth_paragraph(document_t,int,int,int);
+static sentence_t kth_sentence_in_mth_paragraph(document_t,int,int);
+static paragraph_t kth_paragraph(document_t,int);
+static void print_word(word_t);
+static void print_sentence(sentence_t);
+static void print_paragraph(paragraph_t);
+static char* get_input_text(void);
+static void free_memory(document_t*);
 
 int main(void) {
     char* text = get_input_text();
@@ -78,7 +77,7 @@ int main(void) {
    return EXIT_SUCCESS;
 }
 
-char* get_input_text(void) {	
+static char* get_input_text(void) {	
     int paragraph_count;
     scanf("%d", &paragraph_count);
     char p[MAX_PARAGRAPHS][MAX_CHARACTERS], doc[MAX_CHARACTERS];
@@ -95,7 +94,7 @@ char* get_input_text(void) {
     return returnDoc;
 }
 
-struct document get_document(char* text) {
+static struct document get_document(char* text) {
     int w_count,sen_count,para_count;
     w_count = sen_count = para_count = 0;
     word_t *total_words = NULL;
@@ -174,23 +173,23 @@ struct document get_document(char* text) {
     return doc;
 }
 
-struct word kth_word_in_mth_sentence_of_nth_paragraph(struct document Doc, int k, int m, int n) {
+static struct word kth_word_in_mth_sentence_of_nth_paragraph(struct document Doc, int k, int m, int n) {
     return Doc.data[n - 1].data[m - 1].data[k - 1];
 }
 
-struct sentence kth_sentence_in_mth_paragraph(struct document Doc, int k, int m) { 
+static struct sentence kth_sentence_in_mth_paragraph(struct document Doc, int k, int m) { 
     return Doc.data[m - 1].data[k - 1];
 }
 
-struct paragraph kth_paragraph(struct document Doc, int k) {
+static struct paragraph kth_paragraph(struct document Doc, int k) {
     return Doc.data[k - 1];
 }
 
-void print_word(struct word w) {
+static void print_word(struct word w) {
     printf("%s", w.data);
 }
 
-void print_sentence(struct sentence sen) {
+static void print_sentence(struct sentence sen) {
     for(int i = 0; i < sen.word_count; i++) {
         print_word(sen.data[i]);
         if (i != sen.word_count - 1) {
@@ -199,22 +198,14 @@ void print_sentence(struct sentence sen) {
     }
 }
 
-void print_paragraph(struct paragraph para) {
+static void print_paragraph(struct paragraph para) {
     for(int i = 0; i < para.sentence_count; i++) {
         print_sentence(para.data[i]);
         printf(".");
     }
 }
 
-void print_document(struct document doc) {
-    for(int i = 0; i < doc.paragraph_count; i++) {
-        print_paragraph(doc.data[i]);
-        if (i != doc.paragraph_count - 1)
-            printf("\n");
-    }
-}
-
-void free_memory(document_t *doc) {
+static void free_memory(document_t *doc) {
     size_t i,j,k;
     for(i = 0; i < (doc->paragraph_count); ++i) {
         for(j = 0; j < (doc->data[i].sentence_count); ++j) {
