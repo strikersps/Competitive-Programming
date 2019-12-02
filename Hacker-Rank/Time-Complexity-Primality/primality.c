@@ -18,21 +18,25 @@ int main(void) {
         uint32_t n;
         scanf("%"SCNu32, &n);
         assert(n > 0 && n < 2000000001);
-        if(n == 1) {
-            printf("Not prime\n");
-        } else {
-            printf("%s", check_primality(n) ? "Prime\n" : "Not prime\n");
-        }
+        printf("%s", check_primality(n) ? "Prime\n" : "Not prime\n");
     }
     return EXIT_SUCCESS;
 }
 
 static const bool check_primality(uint32_t n) {
     bool is_prime = true;
-    for(uint64_t i = 2; (i * i) <= n; ++i) {
-        if(!(n % i)) {
-            is_prime = false;
-            break;
+    if(n < 2) {
+        is_prime = false;
+    } else if(n == 2 || n == 3) {
+        is_prime = true;
+    } else if(!(n % 2) || !(n % 3)) {
+        is_prime = false;
+    } else {
+        for(uint64_t i = 5; (i * i) <= n; ++i) {
+            if(!(n % i)) {
+                is_prime = false;
+                break;
+            }
         }
     }
     return is_prime;
