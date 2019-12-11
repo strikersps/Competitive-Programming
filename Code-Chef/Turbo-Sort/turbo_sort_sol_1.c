@@ -1,6 +1,6 @@
 /*  Problem Statement: https://www.codechef.com/problems/TSORT
     Author: striker
-    NOTE: Solved the problem using Counting Sort Algorithm. Time-Complexit = O(max(a[i])) where a[i] represents the ith element of the given sequence.
+    NOTE: Solved the problem using Counting Sort Algorithm. Time-Complexity = O(max(a[i])) where a[i] represents the ith element of the given sequence.
 */
 
 #include<stdio.h>
