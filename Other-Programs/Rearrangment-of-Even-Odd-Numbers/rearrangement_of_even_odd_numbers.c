@@ -21,6 +21,7 @@ int main(void) {
     unsigned int n;
     // printf("Enter the length of the sequence\n");
     scanf("%u", &n);
+    assert(n > 0);
     int sequence[n];
     // printf("Enter the sequence\n");
     for(unsigned int i = 0; i < n; ++i) {
