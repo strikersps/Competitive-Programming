@@ -6,7 +6,7 @@ Author: striker
 from collections import defaultdict
 
 def main():
-    for t in range(int(input())):
+    for t   in range(int(input())):
         spam_map = defaultdict(list)
         for w in range(int(input())):
             word, value = tuple(input().rstrip().split())
