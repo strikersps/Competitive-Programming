@@ -1,0 +1,10 @@
+Matrix-A:
+   -2    8    6
+    5    2    7
+Matrix-B:
+    1    4
+    2    5
+    3    6
+Result-Matrix:
+   32   68
+   30   72
