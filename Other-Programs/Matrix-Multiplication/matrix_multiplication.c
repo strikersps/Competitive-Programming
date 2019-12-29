@@ -47,6 +47,8 @@ int main(void) {
     if(matrix_A_cols == matrix_B_rows) {
         int* *const result_matrix = matrix_multiplication(matrix_A, matrix_A_rows, matrix_A_cols, matrix_B, matrix_B_cols);
         if(!result_matrix) {
+            MEMORY_ALLOCATION_FAILED_ERROR(result_matrix, matrix_A_rows * matrix_B_cols * sizeof(**result_matrix));
+            exit(0);
         }
         printf("Result-Matrix:\n");
         display_matrix(result_matrix, matrix_A_rows, matrix_B_cols);
