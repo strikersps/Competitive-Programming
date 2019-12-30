@@ -38,7 +38,7 @@ static ull_t nth_fibonacci(ull_t n) {
     if(!n) {
         return 0;
     }
-    ull_t result_matrix[][ncols] = {{1, 0}, {0, 1}};
+    ull_t result_matrix[][ncols] = {{1, 0}, {0, 1}}; // Identity Matrix
     matrix_exponentiation(result_matrix, n);
     return result_matrix[0][0];
 }
