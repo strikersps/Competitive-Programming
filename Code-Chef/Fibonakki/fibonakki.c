@@ -16,7 +16,7 @@ enum {nrows = 2, ncols = 2};
 
 static ull_t nth_fibonacci(ull_t);
 static void matrix_exponentiation(ull_t [][ncols], ull_t);
-static void matrix_multiplication(ull_t [][ncols], ull_t [*][*]);
+static void matrix_multiplication(ull_t [][ncols], ull_t [][ncols]);
 
 int main(void) {
     int test;
@@ -43,7 +43,7 @@ static ull_t nth_fibonacci(ull_t n) {
     return result_matrix[0][0];
 }
 
-static void matrix_exponentiation(ull_t result_matrix[][2], ull_t n) {
+static void matrix_exponentiation(ull_t result_matrix[][ncols], ull_t n) {
     if(n > 1) {
         ull_t transformation_matrix[][ncols] = {{1, 1}, {1, 0}};
         while(n) {
