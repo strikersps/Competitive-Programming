@@ -34,35 +34,29 @@ int main(void) {
 
 static ull_t compute_number_of_decodings(char encoded_data[]) {
     int data_len = strlen(encoded_data);
-    ull_t *const cache_solutions = calloc(data_len, sizeof(*cache_solutions));
-    if(cache_solutions) {
-        for(int end = data_len - 1, i = 0; end >= 0; --end, ++i) {
-            if(end == data_len - 1) {
-                if('0' == encoded_data[end]) {
-                    cache_solutions[i] = 0;
-                } else {
-                    cache_solutions[i] = 1;
-                }
+    ull_t cache_solutions[data_len];
+    memset(cache_solutions, 0, data_len * sizeof(ull_t));
+    for(int end = data_len - 1, i = 0; end >= 0; --end, ++i) {
+        if(end == data_len - 1) {
+            if('0' == encoded_data[end]) {
+                cache_solutions[i] = 0;
             } else {
-                int valid_num = ((encoded_data[end] - '0') * 10) + encoded_data[end + 1] - '0';
-                if('0' != encoded_data[end]) {
-                    cache_solutions[i] = cache_solutions[i - 1];
-                    if(valid_num > 9  && valid_num < 27) {
-                        if(end == data_len - 2) {
-                            cache_solutions[i]++;
-                        } else {
-                            cache_solutions[i] += cache_solutions[i - 2];
-                        }
+                cache_solutions[i] = 1;
+            }
+        } else {
+            int valid_num = ((encoded_data[end] - '0') * 10) + encoded_data[end + 1] - '0';
+            if('0' != encoded_data[end]) {
+                cache_solutions[i] = cache_solutions[i - 1];
+                if(valid_num > 9  && valid_num < 27) {
+                    if(end == data_len - 2) {
+                        cache_solutions[i]++;
+                    } else {
+                        cache_solutions[i] += cache_solutions[i - 2];
                     }
                 }
             }
         }
-    } else {
-        MEMORY_ALLOCATION_FAILED_ERROR(cache_solutions, data_len * sizeof(*cache_solutions));
-        exit(0);
     }
-    ull_t total_decodings = cache_solutions[data_len - 1];
-    free(cache_solutions);
-    return total_decodings;
+    return cache_solutions[data_len - 1];
 }
 
