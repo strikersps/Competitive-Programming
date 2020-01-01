@@ -14,6 +14,8 @@ typedef long long ll_t;
 #define MEMORY_ALLOCATION_FAILED_ERROR(variable, bytes) fprintf(stderr, "Line number: %u: Not able to allocate <%lu> bytes of memory to <%s> variable.\n", __LINE__, (bytes), #variable)
 #define CONSTRAINTS_OUT_OF_BOUND_ERROR(variable, constraints) fprintf(stderr. "Line number: %u: Constraints not satisfied for the <%s> variable i.e. %s\n", __LINE__, #variable, #constraints)
 
+enum alphabet_mapping {A = 1, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z};
+
 static ull_t compute_number_of_decodings(char[]);
 
 int main(void) {
@@ -47,7 +49,7 @@ static ull_t compute_number_of_decodings(char encoded_data[]) {
             int valid_num = ((encoded_data[end] - '0') * 10) + encoded_data[end + 1] - '0';
             if('0' != encoded_data[end]) {
                 cache_solutions[i] = cache_solutions[i - 1];
-                if(valid_num > 9  && valid_num < 27) {
+                if(valid_num >= J  && valid_num <= Z) {
                     if(end == data_len - 2) {
                         cache_solutions[i]++;
                     } else {
