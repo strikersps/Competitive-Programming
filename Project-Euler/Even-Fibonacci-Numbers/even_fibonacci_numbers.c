@@ -1,4 +1,4 @@
-/*  Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler002/problem
+/*  Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler002/problem or https://projecteuler.net/problem=2
  *  Author: striker
 */
 
@@ -41,13 +41,13 @@ int main(void) {
 }
 
 static ull_t compute_even_fibonacci_sum(const ull_t n) {
-    ull_t sub_problem_1 = 2, sub_problem_2 = 8;
-    ull_t even_sum = sub_problem_1;
-    while(sub_problem_2 <= n) {
-        even_sum += sub_problem_2;
-        ull_t temp = sub_problem_2;
-        sub_problem_2 = 4 * sub_problem_2 + sub_problem_1;
-        sub_problem_1 = temp;
+    ull_t sub_problem_1_sol = 2, sub_problem_2_sol = 8;
+    ull_t even_sum = sub_problem_1_sol;
+    while(sub_problem_2_sol <= n) {
+        even_sum += sub_problem_2_sol;
+        ull_t temp = sub_problem_2_sol;
+        sub_problem_2_sol = 4 * sub_problem_2_sol + sub_problem_1_sol;
+        sub_problem_1_sol = temp;
     }
     return even_sum;
 }
