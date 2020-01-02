@@ -7,57 +7,64 @@
 #include<inttypes.h>
 #include<string.h>
 #include<stdbool.h>
-#include<assert.h>
 
 #define MAX_SIZE 11
+#define MEMORY_ALLOCATION_FAILED_ERROR(variable, bytes) fprintf(stderr, "Line number: %u: Not able to allocate <%lu> bytes of memory to <%s> variable.\n", __LINE__, (bytes), #variable)
+#define CONSTRAINTS_OUT_OF_BOUND_ERROR(variable, constraints) fprintf(stderr, "Line number: %u: Constraints not satisfied for the variable <%s> i.e. $%s\n", __LINE__, #variable, #constraints)
 
-int compare_ints(const void*, const void*);
+int comparator_callback(const void*, const void*);
 
 int main(void) {
-    uint32_t test;
-    scanf("%"SCNu32, &test);
-    assert(test > 0);
+    #ifndef ONLINE_JUDGE
+        freopen("test-cases/test-case-2.in", "r", stdin);
+        freopen("test-cases/test-case-2.out", "w", stdout);
+    #endif
+    int test;
+    scanf("%d", &test);
+    if(test < 1) {
+        CONSTRAINTS_OUT_OF_BOUND_ERROR(test, test variable cannot be -ve);
+        exit(0);
+    }
     while(test--) {
-        uint16_t n;
-        scanf("%"SCNu16, &n);
-        assert(n > 0);
-        uint8_t *const hotness_level_men = calloc(n, sizeof(uint8_t));
+        int n;
+        scanf("%d", &n);
+        if(n < 1) {
+            CONSTRAINTS_OUT_OF_BOUND_ERROR(n, n cannot be -ve);
+            exit(0);
+        }
+        unsigned int *const hotness_level_men = calloc(n, sizeof(*hotness_level_men));
         if(hotness_level_men) {
-            for(uint16_t i = 0; i < n; ++i) {
-                scanf("%"SCNu8, &hotness_level_men[i]);
+            for(int i = 0; i < n; ++i) {
+                scanf("%u", &hotness_level_men[i]);
             }
-            qsort(hotness_level_men, n, sizeof(uint8_t), compare_ints);
+            qsort(hotness_level_men, n, sizeof(*hotness_level_men), comparator_callback);
         } else {
-            fprintf(stderr, "Not able to allocate %lu bytes of memory\n", (n * sizeof(uint8_t)));
+            MEMORY_ALLOCATION_FAILED_ERROR(hotness_level_man, n * sizeof(*hotness_level_men));
+            exit(0);
         }
-        uint8_t *const hotness_level_women = calloc(n, sizeof(uint8_t));
+        unsigned int *const hotness_level_women = calloc(n, sizeof(*hotness_level_women));
         if(hotness_level_women) {
-            for(uint16_t i = 0; i < n; ++i) {
-                scanf("%"SCNu8, &hotness_level_women[i]);
+            for(int i = 0; i < n; ++i) {
+                scanf("%u", &hotness_level_women[i]);
             }
-            qsort(hotness_level_women, n, sizeof(uint8_t), compare_ints);
+            qsort(hotness_level_women, n, sizeof(*hotness_level_women), comparator_callback);
         } else {
-            fprintf(stderr, "Not able to allocate %lu bytes of memory\n", (n * sizeof(uint8_t)));
+            MEMORY_ALLOCATION_FAILED_ERROR(hotness_women_level, n * sizeof(*hotness_level_women));
+            exit(0);
         }
-        uint32_t sum_of_hotness_bonds = 0;
-        for(uint16_t i = 0; i < n; ++i) {
+        unsigned int sum_of_hotness_bonds = 0;
+        for(int i = 0; i < n; ++i) {
             if(hotness_level_men[i] && hotness_level_women[i]) {
                 sum_of_hotness_bonds += (hotness_level_men[i] * hotness_level_women[i]);
             }
         }
-        printf("%"PRIu32"\n", sum_of_hotness_bonds);
+        printf("%d\n", sum_of_hotness_bonds);
         free(hotness_level_men);
         free(hotness_level_women);
     }
     return EXIT_SUCCESS;
 }
 
-int compare_ints(const void *a, const void *b) {
-    uint8_t v1 = *(const uint8_t*) a;
-    uint8_t v2 = *(const uint8_t*) b;
-    if(v1 > v2) {
-        return true;
-    } else {
-        return false;
-    }
+int comparator_callback(const void *a, const void *b) {
+    return (*(unsigned int*) a) < (*(unsigned int*) b);
 }
