@@ -16,10 +16,12 @@ typedef long long ll_t;
 static ull_t compute_even_fibonacci_sum(const ull_t);
 
 int main(void) {
+    /*
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
+    */
     int test;
     scanf("%d", &test);
     if(test < 1 || test > 100000) {
