@@ -1,5 +1,5 @@
 # Competitive Programming
-* The repository consists of **Accepted** solutions of the problems in Online Judges/Competitive Programming websites like SPOJ, Codechef, Codeforces, Hackerrank, Hackerearth, Project Euler, etc in `C/C++` and `Python`.
+* The repository consists of **Accepted** solutions of the problems in Online Judges/Competitive Programming websites like SPOJ, CodeChef, CodeForces, Hacker-Rank, Hacker-Earth, Project Euler, etc in `C/C++` and `Python`.
 * To find out the problem statement related to every program, refer to the problem link at the top of every source-code.  
 
 # Contribution  
