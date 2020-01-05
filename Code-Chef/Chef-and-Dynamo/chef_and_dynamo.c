@@ -36,11 +36,12 @@ int main(void) {
         }
         ull_t sum, a, b, c, d, e;
         scanf("%llu", &a);
-        sum = a + (2 * binary_exponentiation(10, n));
+        ull_t power_of_10 = binary_exponentiation(10, n);
+        sum = a + (power_of_10 << 1);
         printf("%llu\n", sum);
         fflush(stdout);
         scanf("%llu", &b);
-        c = binary_exponentiation(10, n) - b;
+        c = power_of_10 - b;
         printf("%llu\n", c);
         fflush(stdout);
         scanf("%llu", &d);
