@@ -42,9 +42,7 @@ static int compute_length_of_longest_prefix(char expression[]) {
             --open_angle_brackets;
         }
         if(!open_angle_brackets) {
-            if(max_prefix_length < (i + 1)) {
-                max_prefix_length = (i + 1);
-            }
+            max_prefix_length = (i + 1);
         } else if (open_angle_brackets < 0) {
             break;
         }
