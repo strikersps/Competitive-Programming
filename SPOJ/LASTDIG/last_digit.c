@@ -1,26 +1,36 @@
 #include<stdio.h>
-#include<inttypes.h>
-#include<assert.h>
+#include<stdlib.h>
 
-uint32_t find_last_digit(uint32_t,uint32_t);
+#define MODULUS 10
+
+static int compute_last_digit(int, int);
 
 int main(void) {
-    uint8_t test;
-    uint32_t a,b;
-    for(scanf("%"SCNu8,&test);test;--test) {
-        scanf("%"SCNu32"%"SCNu32,&a,&b);
-        assert((a>=0 && a<21)&&(b>=0 && b<2147483001));
-        printf("%"PRIu32"\n",find_last_digit(a,b));
-    }
-    return 0;
+	int test;
+	scanf("%d", &test);
+	while(test--) {
+		int a, b;
+		scanf("%d%d", &a, &b);
+		printf("%d\n", compute_last_digit(a, b));
+	}
+	return EXIT_SUCCESS;
 }
 
-uint32_t find_last_digit(uint32_t base,uint32_t exponent) {
-    uint32_t result = 1;
-    while(exponent) {
-        if(exponent & 1) result = (result*base) % 10;
-        base = (base*base) % 10;
-        exponent >>= 1;
-    }
-    return result;
+static int compute_last_digit(int base, int exponent) {
+	int result;
+	if(!base) {
+		result = 0;
+	} else if(!exponent) {
+		result = 1;
+	} else {
+		result = 1;
+		while(exponent) {
+			if(exponent & 1) {
+				result = (result * (base)) % MODULUS;
+			}
+			base = (base * base) % MODULUS;
+			exponent >>= 1;
+		}
+	}
+	return result;
 }
