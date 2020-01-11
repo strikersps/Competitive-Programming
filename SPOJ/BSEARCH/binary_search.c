@@ -43,7 +43,6 @@ typedef struct Point2D {
 static int binary_search(const int *const, int, int, const int);
 
 int main(void) {
-    // This code-fragment is defined only for Online Judges where ONLINE_JUDGE macro is defined.
     #ifndef  ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
