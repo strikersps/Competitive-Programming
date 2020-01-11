@@ -43,7 +43,7 @@ typedef struct Point2D {
 static int binary_search(const int *const, int, int, const int);
 
 int main(void) {
-    #ifndef  ONLINE_JUDGE
+    #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
