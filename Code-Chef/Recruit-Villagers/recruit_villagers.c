@@ -24,7 +24,7 @@ typedef struct Point2D {
 #define INITIALISE_CONTAINER_ZERO(container, bytes) memset(container, 0, (bytes))
 #define FIND_MAX(a, b) (a) > (b) ? (a) : (b)
 #define FIND_MIN(a, b) (a) < (b) ? (a) : (b)
-#define FIND_MID(start, end) ((end) - (start) >> 1) + (start)
+#define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
 
 int main(void) {
     // This #ifndef code-fragment is defined only for Online Judges where ONLINE_JUDGE macro is defined.
