@@ -27,8 +27,7 @@ typedef struct Point2D {
 #define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
 
 int main(void) {
-    // This #ifndef code-fragment is defined only for Online Judges where ONLINE_JUDGE macro is defined.
-    #ifndef  ONLINE_JUDGE
+    #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
