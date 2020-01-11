@@ -14,12 +14,6 @@
  * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
  * GNU General Public License for more details.
  *
- * You should have received a copy of the GNU General Public License
- * along with this program; if not, write to the Free Software
- * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
- * MA 02110-1301, USA.
- *
- *
  */
 
 #include <stdio.h>
@@ -52,7 +46,7 @@ int main(void) {
     // This code-fragment is defined only for Online Judges where ONLINE_JUDGE macro is defined.
     #ifndef  ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
-        // freopen("test-cases/test-case-1.out", "w", stdout);
+        freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
     int n, queries;
     scanf("%d%d", &n, &queries);
