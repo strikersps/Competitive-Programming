@@ -1,5 +1,5 @@
 /*
- * Problem Statement: You are given an array A consisting of N integers. What is the maximum product (multiplication) of any pair of integers in A?
+ * Problem Statement: https://github.com/strikersps/Competitive-Programming/blob/master/Other-Programs/Best-Pair/readme.md
  * Author: striker
  *
  * Copyright 2020 striker
