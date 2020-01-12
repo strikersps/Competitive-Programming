@@ -9,11 +9,9 @@ The first line contains a single integer N. The next line contains N space-separ
 **Output Format**
 A single line containing the maximum product.
 
-```
 Constraints
-* 2 ≤ N ≤ 100,000
-* -1,000,000 ≤ A[i] ≤ 1,000,000
-```
+* `2 ≤ N ≤ 100,000`
+* `-1,000,000 ≤ A[i] ≤ 1,000,000`
 
 Sample Input
 ```
