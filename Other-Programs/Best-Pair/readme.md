@@ -1,7 +1,7 @@
 # Problem Statement
 
 **Description**
-You are given an array A consisting of N integers. What is the maximum product (multiplication) of any pair of integers in A?
+You are given an array `A` consisting of `N` integers. What is the maximum product (multiplication) of any pair of integers in `A`?
 
 **Constraints**
 * `2 ≤ N ≤ 100,000`
