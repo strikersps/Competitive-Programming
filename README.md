@@ -7,7 +7,7 @@
 
 *   **For Contribution Guidelines, refer to [CONTRIBUTING.md](https://github.com/strikersps/Competitive-Programming/blob/master/CONTRIBUTING.md) file.**
 
-* Moreover, if you find any errors in the programs of this repository related to logical error, syntax error, SIGSEGV, SIGFPE, SIGABRT, NZER error, please create an issue related to that, however I have personally tested all the programs.
+* Moreover, if you find any errors in the programs of this repository related to logical error, syntax error, SIGSEGV, SIGFPE, SIGABRT, NZEC error, please create an issue related to that.
 
 * If you have a better algorithm or a logical way of solving a problem then do contribute to the repository.  
 
