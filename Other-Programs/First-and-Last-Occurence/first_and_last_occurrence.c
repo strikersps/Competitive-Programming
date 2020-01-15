@@ -47,7 +47,7 @@ static int find_last_occurrence(const int *const, int, int, const int);
 int main(void) {
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
-        // freopen("test-cases/test-case-1.out", "w", stdout);
+        freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
     int test;
     scanf("%d", &test);
