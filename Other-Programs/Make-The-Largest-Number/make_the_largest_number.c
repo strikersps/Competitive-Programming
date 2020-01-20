@@ -61,10 +61,18 @@ int main(void) {
         scanf("%d", &n);
         ull_t *const sequence = calloc(n, sizeof*sequence);
         if(sequence) {
+            bool is_zero = true;
             for(int i = 0; i < n; ++i) {
                 scanf("%llu", (sequence + i));
+                if(is_zero && 0 != sequence[i]) {
+                    is_zero = false;
+                }
             }
-            compute_largest_number(sequence, n); // Compute the largest number that can be built from the numbers of the sequence.
+            if(!is_zero) {
+                compute_largest_number(sequence, n); // Compute the largest number that can be built from the numbers of the sequence.
+            } else {
+                printf("0\n");
+            }
             free(sequence);
         } else {
             MEMORY_ALLOCATION_FAILED_ERROR(sequence, n * sizeof*sequence);

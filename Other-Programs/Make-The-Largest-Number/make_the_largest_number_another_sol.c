@@ -57,12 +57,20 @@ int main(void) {
         int n;
         scanf("%d", &n);
         ull_t sequence[n];
+        bool is_zero = true;
         for(int i = 0; i < n; ++i) {
             scanf("%llu", (sequence + i));
+            if(is_zero && 0 != sequence[i]) {
+                is_zero = false;
+            }
         }
-        qsort(sequence, n, sizeof(ull_t), comparator_callback);
-        for(int i = 0; i < n; ++i) {
-            printf("%llu", sequence[i]);
+        if(is_zero) {
+            printf("0");
+        } else {
+            qsort(sequence, n, sizeof(ull_t), comparator_callback);
+            for(int i = 0; i < n; ++i) {
+                printf("%llu", sequence[i]);
+            }
         }
         printf("\n");
     }
