@@ -1,5 +1,5 @@
 '''
-Problem Statement: Refer to the readme.md or the Problem-Statement.jpeg in the current directory.
+Problem Statement: Refer to the readme.md.
 Author: striker
 '''
 
