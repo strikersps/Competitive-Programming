@@ -51,7 +51,7 @@ static void swap_data(char *const, char *const);
 int main(void) {
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
-        // freopen("test-cases/test-case-1.out", "w", stdout);
+        freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
     int test;
     scanf("%d", &test);
@@ -67,6 +67,18 @@ int main(void) {
     }
     return EXIT_SUCCESS;
 }
+
+/*
+ * Algorithm Explanation:
+ * Step-1: First find out the largest index such that, number[index] < number[index + 1].
+ * Step-2: If the index == 0, then the given number is already the largest number you can build, else if index > 0, then there is an existence of next largest number for the given number.
+ * Step-3: Let's denote the found index in the Step-1 as 'start', if start > 0 then find the largest index such that, number[index] > number[start].
+ * Step-4: Let's denote the found index in Step-3 as 'end', now swap the numbers which are present at number[start] and number[end].
+ * Step-5: Sort the number from start to last-digit in increasing order. As I am representing the number in the form of a string, sort the string from start to last location of the string.
+ * Step-6: For Step-5, you don't need to use any sorting algorithm, if you observe carefully, the string[start: last_element] is in decreasing order, so you just need to reverse the string to sort it in increasing order.
+ * That's it, the resultant string which you will get after executing the above steps, will be the next-largest string you can build with the digits of N.
+ * Refer to the function static void next_permutation(char number[]) for source-code, and try to run on a simple to understand how the code is working, then you would have better clarity over the algorithm explained in the above steps.
+*/
 
 static void next_permutation(char number[]) {
     int start, end, number_len = strlen(number);
