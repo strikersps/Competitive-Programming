@@ -1,12 +1,14 @@
 # Problem Description:
-Write a program that returns the next largest number that can be created from the same digits as the input.
-Another formal way of stating the problem:
+Write a program that returns the next largest number that can be created from the same digits as the input.  
+Another formal way of stating the problem would be:  
 You are given a number `N`, generate the lexicographically next number using the same digits of `N`.
-
 If the next number doesn't exist, return `N`.
 
-**Input-Format**
+**Input-Format**  
 First line consist of `T` denotes the number of test-cases, followed by `T` lines consists of number `N`.
+
+**Output-Format**  
+Print the next largest number for each `N` in new-line.  
 
 **Example:**
 ```
