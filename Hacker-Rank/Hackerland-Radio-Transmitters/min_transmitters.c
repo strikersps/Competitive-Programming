@@ -50,7 +50,7 @@ int main(void) {
     /* Hacker-Rank doesn't have ONLINE_JUDGE macro defined.
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
-        // freopen("test-cases/test-case-1.out", "w", stdout);
+        freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
     */
     int n, k;
