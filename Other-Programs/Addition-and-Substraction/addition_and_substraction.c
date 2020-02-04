@@ -44,12 +44,10 @@ typedef struct Point2D {
 #define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
 
 int main(void) {
-    /*
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
-    */
     int x, y, z, found_index;
     scanf("%d%d%d", &x, &y, &z);
     found_index = -1;
@@ -83,13 +81,3 @@ int main(void) {
     printf("%d\n", found_index);
     return EXIT_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
