@@ -44,10 +44,12 @@ typedef struct Point2D {
 #define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
 
 int main(void) {
+    /* Hacker-Rank doesn't have ONLINE_JUDGE macro defined.
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
+    */
     int start, end;
     scanf("%d%d", &start, &end);
     int xored = start ^ end;
