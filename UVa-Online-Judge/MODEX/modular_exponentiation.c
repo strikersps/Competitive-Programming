@@ -54,17 +54,19 @@ typedef struct Point2D {
 static ll_t compute_modular_exponentiation(ll_t, ll_t, const ll_t);
 
 int main(void) {
-    /*
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
-    */
     int test;
     scanf("%d", &test);
     while(test--) {
         ll_t base, exponent, modulus;
-        scanf("%lld%lld%lld", &base, &exponent, &modulus);
+        scanf("%lld", &base);
+        if(!base) {
+            break;
+        }
+        scanf("%lld%lld", &exponent, &modulus);
         printf("%lld\n", compute_modular_exponentiation(base, exponent, modulus));
     }
     return EXIT_SUCCESS;
