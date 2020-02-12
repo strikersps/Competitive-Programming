@@ -5,3 +5,4 @@
 **NOTE**
 - The C-Program solution to the problems of UVa Online Judge is provided in ANSI-C standard i.e. C90 as they have not updated the `gcc` compiler to the latest version i.e. 7.4.0.
 - According to the site the `gcc` compiler version is: `ANSI C 5.3.0`. So, be careful while writing the solution in `C Programming language` as the Online Judge may give you compilation error.
+
