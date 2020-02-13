@@ -43,7 +43,7 @@ typedef struct Point2D {
 #define FIND_MIN(a, b) (a) < (b) ? (a) : (b)
 #define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
 
-/* ANSI C99 doesn't have following GCC functions defined.
+/* ANSI C 5.3.0 - GNU C Compiler doesn't have following GCC functions defined.
 // The below function macros refers to the GCC functions for doing computation directly on the bit-level of a number.
 #define COMPUTE_SET_BITS(number) __builtin_popcountll(number) // Returns the number of set-bits in number (unsigned long long).
 #define COMPUTE_PARITY(number) __builtin_parityll(number) // Returns the parity of the number (unsigned long long) i.e. True if 1's are odd else False.
