@@ -1,5 +1,6 @@
 /*
- * Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler006/problem
+ * Problem Statement: (i) https://www.hackerrank.com/contests/projecteuler/challenges/euler006/problem
+ *                    (ii) https://projecteuler.net/problem=6
  * Author: striker
  *
  * Copyright 2020 striker
