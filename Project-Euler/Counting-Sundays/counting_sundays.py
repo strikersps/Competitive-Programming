@@ -2,6 +2,7 @@
 Problem Statement: https://www.hackerrank.com/contests/projecteuler/challenges/euler019/problem
 Author: striker
 '''
+
 months = {1 : "JAN", 2: "FEB", 3 : "MARCH", 4 : "APRIL", 5 : "MAY", 6 : "JUNE", 7 : "JULY", 8 : "AUG", 9 : "SEPT", 10 : "OCT", 11 : "NOV", 12 : "DEC"}
 week_days = {"Saturday" : 0, "Sunday" : 1, "Monday" : 2, "Tuesday" : 3, "Wednesday" : 4, "Thursday" : 5, "Friday" : 6}
 month_codes = {"JAN" : 13, "FEB" : 14, "MARCH" : 3, "APRIL" : 4, "MAY" : 5, "JUNE" : 6, "JULY" : 7, "AUG" : 8, "SEPT" : 9, "OCT" : 10, "NOV" : 11, "DEC" : 12}
