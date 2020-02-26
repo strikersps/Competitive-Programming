@@ -47,8 +47,7 @@ where `M` and `N` are the number of rows and columns respectively.
 
 So, instead of using an `O(m + n)` space, why don't we use the first row and first column to record all the `0's`.  
 
-And it turns out that, we can actually do it.
-But you need to take care of the condition, that if there is any `0` in first row or first column itself or not.  
+And it turns out that, we can actually do it. But you need to take care of the condition, that if there is any `0's` in first row or first column.  
 
 **Algorithm**:  
 
