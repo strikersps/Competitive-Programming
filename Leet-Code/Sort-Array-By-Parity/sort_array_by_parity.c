@@ -98,6 +98,11 @@ static void swap_data(int *const a, int *const b) {
     }
 }
 
+/*
+ * Function which needs to be written on Leet-Code.
+ * This function execution depends on another function i.e. swap_data() defined at line number 93.
+ * Time-Complexity: O(n) and Space-Complexity: O(1).
+*/
 static void sort_array_by_parity(int *sequence, const int n) {
     for(register int start = 0, end = (n - 1); start < end; ) {
         if(!(sequence[start] & 1) && sequence[end] & 1) {
