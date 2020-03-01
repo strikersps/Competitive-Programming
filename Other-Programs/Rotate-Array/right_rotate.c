@@ -55,7 +55,7 @@ static void display_list(int[], const int, const char *const);
 int main(void) {
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
-        // freopen("test-cases/test-case-1.out", "w", stdout);
+        freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
     int test;
     if(1 == scanf("%d", &test)) {
