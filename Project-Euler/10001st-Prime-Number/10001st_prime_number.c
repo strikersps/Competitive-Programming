@@ -9,8 +9,8 @@
 #include<string.h>
 #include<assert.h>
 
-#define MAX_LIMIT 1000000 // Chosen this limit because there are 78,493 prime numbers <= 10^6
-#define TOTAL_PRIMES 78493
+#define MAX_LIMIT 1000000 // Chosen this limit because there are 78,498 prime numbers <= 10^6
+#define TOTAL_PRIMES 78498
 
 uint32_t prime_number_table[TOTAL_PRIMES]; // Making the table of prime numbers global so that I can access it throughout the program.
 
