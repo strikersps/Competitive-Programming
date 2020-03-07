@@ -4,12 +4,10 @@ Author: striker
 '''
 
 def defangIPaddr(address):
-    defang_address = ['[.]' if data == '.' else data for data in address]
-    return "".join(defang_address)
+    return "".join(['[.]' if data == '.' else data for data in address])
 
 def main():
-    address = list(input())
-    print(defangIPaddr(address))
+    print(defangIPaddr(list(input().rstrip())))
 
 if __name__ == "__main__":
     main()
