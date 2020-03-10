@@ -10,8 +10,8 @@ def mutate_string(string, position, replacement_char):
 
 def main():
     s = input().strip()
-    position, exchange_char = input().rstrip().split()
-    print("{0}".format(mutate_string(s, int(position), exchange_char)))
+    position, replacement_char = input().rstrip().split()
+    print("{0}".format(mutate_string(s, int(position), replacement_char)))
 
 if __name__ == "__main__":
     main()

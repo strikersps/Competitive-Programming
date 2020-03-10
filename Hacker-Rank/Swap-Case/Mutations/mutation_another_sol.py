@@ -4,7 +4,7 @@ Author: striker
 '''
 
 def mutate_string(string, position, replacement_char):
-    return string[: position] + replacement_char + string[position: ]
+    return string[: position] + replacement_char + string[position + 1: ]
 
 def main():
     string = input().rstrip()
