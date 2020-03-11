@@ -15,11 +15,11 @@ def main():
             continue
         stuart_points += len(word) - index
     if stuart_points == kevin_points:
-        print("{}".format("Draw"))
+        print("{0}".format("Draw"))
     elif stuart_points > kevin_points:
-        print("{} {}".format("Stuart", stuart_points))
+        print("{0} {1}".format("Stuart", stuart_points))
     else:
-        print("{} {}".format("Kevin", kevin_points))
+        print("{0} {1}".format("Kevin", kevin_points))
 
 if __name__ == "__main__":
     main()
