@@ -15,5 +15,6 @@ def main():
                     word_present.add(word) # If condition is true add the word to word_present set.
                     continue
         print("{0}".format(" ".join(["YES" if word in word_present else "NO" for word in frgt_lang_dict]).rstrip())) # Print the output in required format.
+
 if __name__ == "__main__":
     main()
