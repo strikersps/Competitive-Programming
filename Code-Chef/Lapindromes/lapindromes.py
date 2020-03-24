@@ -10,11 +10,10 @@ def check_lapindrome(word):
     freq_alphabet = [0] * TOTAL_NUMBER_OF_ALPHABETS
     mid = len(word) >> 1
     for index,val in enumerate(word):
+        if len(word) & 1 and index == mid:
+            continue
         if index < mid:
             freq_alphabet[ord(val) - 97] += 1
-        elif len(word) & 1:
-            if index > mid:
-                freq_alphabet[ord(val) - 97] -= 1
         else:
             freq_alphabet[ord(val) - 97] -= 1
     if len(set(freq_alphabet)) > 1:
@@ -22,13 +21,8 @@ def check_lapindrome(word):
     return is_lapindrome
 
 def main():
-    test = int(input())
-    for _ in range(test):
-        word = input()
-        if check_lapindrome(word):
-            print("YES")
-        else:
-            print("NO")
+    for _ in range(int(input().rstrip())):
+        print("{0}".format("YES" if check_lapindrome(input().rstrip()) else "NO"))
 
 if __name__ == "__main__":
     main()
