@@ -75,7 +75,7 @@ int main(void) {
                 bool found_index = false;
                 for(register int i = 0; i < tot_book_in_shop; ++i) {
                     if(2 == scanf("%d%d", &books[i].pages, &books[i].cost)) {
-                        if(books[i].cost <= chef_budget && books[i].pages >= (required_page - have_page)) {
+                        if(!found_index && books[i].cost <= chef_budget && books[i].pages >= (required_page - have_page)) {
                             found_index = true;
                         }
                         continue;
