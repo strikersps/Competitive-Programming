@@ -11,5 +11,6 @@
 
 * If you have a better algorithm or a logical way of solving a problem then do contribute to the repository.  
 
-Thanks For Reading
-Be Safe & Peace.
+**Thanks For Reading**  
+**Take Care & Be Safe**  
+**Peace :v:**
