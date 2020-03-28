@@ -1,5 +1,5 @@
 /*
- * Problem Statement: Refer to the image in the current repository.
+ * Problem Statement: Refer to the readme.md file.
  * Author: striker
  *
  * Copyright 2020 striker
