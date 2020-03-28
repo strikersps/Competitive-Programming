@@ -2,12 +2,12 @@
     Author: striker
 */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<inttypes.h>
-#include<string.h>
-#include<stdbool.h>
-#include<assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <inttypes.h>
+#include <string.h>
+#include <stdbool.h>
+#include <assert.h>
 
 #define MAX_EXPRESSION_LENGTH 401
 
