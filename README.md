@@ -5,12 +5,12 @@
 # Contribution Guidelines
 * As a programmer I firmly believe in **"Writing Clean and Easy To Understand Code"** and if you are contributing to this repository, I hope you will also share the same vision.
 
-*   **For Contribution Guidelines, refer to these [**guidelines**](https://github.com/strikersps/Competitive-Programming/blob/master/CONTRIBUTING.md).**
+*   **For Contribution Guidelines, click [**here**](https://github.com/strikersps/Competitive-Programming/blob/master/CONTRIBUTING.md).**
 
 * Moreover, if you find any errors in the programs of this repository like Logical Errors, Syntax Errors, SIGSEGV, SIGFPE, SIGABRT, NZEC Error, please create an issue related to that.
 
 * If you have a better algorithm or a logical way of solving a problem then do contribute to the repository.  
 
-**Thanks For Reading**  
-**Take Care & Be Safe**  
-**Peace :v:**
+  **Thanks For Reading**  
+  **Take Care & Be Safe**  
+  **Peace :v:**
