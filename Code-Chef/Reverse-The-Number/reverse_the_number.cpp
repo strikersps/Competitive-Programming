@@ -2,8 +2,7 @@
     Author: striker
 */
 
-#include<bits/stdc++.h>
-using namespace std;
+#include <bits/stdc++.h>
 
 static unsigned int compute_reverse_number(unsigned int);
 
@@ -13,7 +12,7 @@ int main(void) {
     while(test--) {
         unsigned int n;
         std :: cin >> n;
-        std :: cout << compute_reverse_number(n) << endl;
+        std :: cout << compute_reverse_number(n) << std :: endl;
     }
     return 0;
 }
