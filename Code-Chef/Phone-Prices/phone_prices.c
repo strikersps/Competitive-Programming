@@ -1,55 +1,92 @@
-/*  Problem Statement: https://www.codechef.com/OCT19B/problems/S10E
-    Author: striker
-*/
+/*
+ * Problem Statement: https://www.codechef.com/problems/S10E
+ * Author: striker
+ *
+ * Copyright 2020 striker
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation; either version 2 of the License, or
+ * (at your option) any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<inttypes.h>
-#include<assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <string.h>
+#include <math.h>
+#include <limits.h>
+#include <time.h>
 
-void take_input(uint16_t *const,uint8_t);
-const uint8_t find_number_of_days(uint16_t *const,uint8_t);
+typedef unsigned long long ull_t;
+typedef long long ll_t;
+
+typedef struct Point2D {
+    int x, y;
+} point_2d_t;
+
+#define MOD (1000000000 + 7) // Prime Number
+#define PI 3.141592653589793 // Number of digits(15) of Pi which JPL uses for Interplanetary Caculations.
+#define GOLDEN_RATIO 1.618033988749895 // Number of digits(15).
+
+#define MEMORY_ALLOCATION_FAILED_ERROR(variable, bytes) fprintf(stderr, "Line number: %u: Not able to allocate <%lu> bytes of memory to <%s> variable.\n", __LINE__, (bytes), #variable)
+#define CONSTRAINTS_OUT_OF_BOUND_ERROR(variable, constraints) fprintf(stderr, "Line number: %u: Constraints not satisfied for the variable <%s>, i.e. %s.\n", __LINE__, #variable, #constraints)
+#define SCANF_READ_ERROR(expected_return_val) fprintf(stderr, "Line number: %u: scanf() read error!\nExpected-Return-Value: %d.\n", __LINE__, expected_return_val); exit(0)
+#define STREAM_LINK_ERROR(file_path, stream_name) fprintf(stderr, "Line number: %u: Stream Link Error! Not able to link <%s> file to <%s> stream.\n", __LINE__, #file_path, #stream_name); exit(0);
+#define INITIALISE_INT_CONTAINER_ZERO(container, bytes) memset(container, 0, (bytes))
+#define INITIALISE_CHAR_CONTAINER_ZERO(container, bytes) memset(container, '0', (bytes))
+#define FIND_MAX(a, b) (a) > (b) ? (a) : (b)
+#define FIND_MIN(a, b) (a) < (b) ? (a) : (b)
+#define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
+
+// The below function macros refers to the GCC functions for doing computation directly on the bit-level of a number.
+#define COMPUTE_SET_BITS(number) __builtin_popcountll(number) // Returns the number of set-bits in number (unsigned long long).
+#define COMPUTE_PARITY(number) __builtin_parityll(number) // Returns the parity of the number (unsigned long long) i.e. True if 1's are odd else False.
+#define COUNT_LEAD_ZEROES(number) __builtin_clzll(number) // Returns the count of lead zeroes before first set-bit from MSB in number (unsigned long long).
+#define COUNT_TRAIL_ZEROES(number) __builtin_ctzll(number) // Return the count of trailing zeroes in number(unsigned long long).
+
+static int compute_number_of_days(int[], const int);
 
 int main(void) {
-    uint8_t test;
-    scanf("%"SCNu8,&test);
-    assert(test > 0 && test < 101);
+    int test;
+    if(1 != scanf("%d", &test)) {
+        SCANF_READ_ERROR(1);
+    }
     while(test--) {
-        uint8_t n;
-        scanf("%"SCNu8,&n);
-        assert(n > 6 && n < 101);
-        uint16_t *const prices = calloc(n,sizeof(uint16_t));
-        if(prices) {
-            take_input(prices,n);
-            printf("%"SCNu8"\n",find_number_of_days(prices,n));
-            free(prices);
-        } else {
-            fprintf(stderr,"Memory not allocated to prices pointer!\n");
+        int n;
+        if(1 != scanf("%d", &n)) {
+            SCANF_READ_ERROR(1);
         }
+        int phone_price[n];
+        for(register int i = 0; i < n; ++i) {
+            if(1 != scanf("%d", phone_price + i)) {
+                SCANF_READ_ERROR(1);
+            }
+        }
+        printf("%d\n", compute_number_of_days(phone_price, n));
     }
-    return 0;
+    return EXIT_SUCCESS;
 }
 
-void take_input(uint16_t *const prices,uint8_t n) {
-    for(uint8_t i = 0; i < n; ++i) {
-        scanf("%"SCNu16,&prices[i]);
-        assert(prices[i] > 349 && prices[i] < 751);
-    }
-}
-
-const uint8_t find_number_of_days(uint16_t *const prices,uint8_t n) {
-    uint8_t good_price = 0;
-    int8_t i,j;
-    for(i = 0; i < n; ++i) {
-        uint8_t limit = (i > 5 ? (i - 5) : 0);
-        for(j = (i - 1); j >= limit; --j) {
-            if(prices[j] <= prices[i]) {
+static int compute_number_of_days(int phone_price[], const int n) {
+    int day_count = 0;
+    for(register int i = 0; i < n; ++i) {
+        bool is_good_price = true;
+        for(register int j = (i > 5 ? i - 5 : 0); j < i; ++j) {
+            if(phone_price[j] <= phone_price[i]) {
+                is_good_price = false;
                 break;
             }
         }
-        if(!(j >= limit)) {
-            ++good_price;
+        if(is_good_price) {
+            ++day_count;
         }
     }
-    return good_price;
+    return day_count;
 }
