@@ -4,6 +4,8 @@ Author: striker
 '''
 
 def check_multiple_of_three(k, d0, d1):
+    if k == 2:
+        return not ((d0 + d1) % 3)
     sum_of_digits = d0 + d1 + ((d0 + d1) % 10)
     if k > 3:
         a = ((d0 + d1) << 1) % 10

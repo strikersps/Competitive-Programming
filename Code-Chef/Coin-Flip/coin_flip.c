@@ -64,28 +64,19 @@ int main(void) {
             SCANF_READ_ERROR(1);
         }
         for(register int i = 0; i < games_played; ++i) {
-            int initial_state, tot_coins, is_head;
-            if(3 != scanf("%d%d%d", &initial_state, &tot_coins, &is_head)) {
+            int initial_state, tot_coins, prediction;
+            if(3 != scanf("%d%d%d", &initial_state, &tot_coins, &prediction)) {
                 SCANF_READ_ERROR(3);
             }
-            printf("%d\n", compute_answer(initial_state, tot_coins, is_head));
+            printf("%d\n", compute_answer(initial_state, tot_coins, prediction));
         }
     }
     return EXIT_SUCCESS;
 }
 
-static int compute_answer(const int initial_state, const int tot_coins, const int is_head) {
-    if(!(tot_coins % 2)) {
+static int compute_answer(const int initial_state, const int tot_coins, const int prediction) {
+    if(!(tot_coins % 2) || initial_state == prediction) {
         return tot_coins >> 1;
     }
-    if(initial_state == 1) {
-        if(is_head == 1) {
-            return tot_coins >> 1;
-        }
-        return 1 + (tot_coins >> 1);
-    }
-    if(is_head == 1) {
-        return 1 + (tot_coins >> 1);
-    }
-    return tot_coins >> 1;
+    return 1 + (tot_coins >> 1);
 }

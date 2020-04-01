@@ -70,6 +70,9 @@ int main(void) {
 }
 
 static bool check_multiple_of_three(const ll_t k, ll_t d0, ll_t d1) {
+    if(k == 2) {
+        return !((d0 + d1) % 3);
+    }
     ll_t sum_of_digit = d0 + d1 + ((d0 + d1) % 10);
     if(k > 3) {
         ll_t a = ((d0 + d1) << 1) % 10;
