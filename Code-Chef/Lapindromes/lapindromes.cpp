@@ -7,7 +7,7 @@
 
 #define FAST_IO(value) std :: ios :: sync_with_stdio(value); std :: cin.tie(value)
 
-static bool check_lapindrome(std :: string &);
+static bool check_lapindrome(const std :: string &);
 
 int main(void) {
     FAST_IO(0);
@@ -21,7 +21,7 @@ int main(void) {
     return 0;
 }
 
-static bool check_lapindrome(std :: string & word) {
+static bool check_lapindrome(const std :: string & word) {
     std :: unordered_map <char, int> alphabet_freq_map;
     int word_len = word.length();
     for(register int i = 0; i < word_len; ++i) {
