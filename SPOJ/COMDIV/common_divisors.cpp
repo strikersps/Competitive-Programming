@@ -1,6 +1,6 @@
 /*
  * Problem Statement: https://www.spoj.com/problems/COMDIV/
- * Author:
+ * Author: striker
  *
  * Copyright 2020 striker
  *
