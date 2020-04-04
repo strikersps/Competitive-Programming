@@ -1,12 +1,12 @@
 /*
- * Problem Statement:
+ * Problem Statement: https://www.codechef.com/problems/FLOW005
  * Author: striker
  *
  * Copyright 2020 striker
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 2 of the License, or
+ * the Free Software Foundation; either version TWO of the License, or
  * (at your option) any later version.
  *
  * This program is distributed in the hope that it will be useful,
@@ -26,6 +26,8 @@ typedef long long ll_t;
 #define PI 3.141592653589793 // Number of digits(15) of Pi which JPL uses for Interplanetary Caculations.
 #define GOLDEN_RATIO 1.618033988749895 // Number of digits(15).
 
+enum denominations {HUNDRED = 100, FIFTY = 50, TEN = 10, FIVE = 5, TWO = 2, ONE = 1};
+
 static int compute_smallest_number_of_notes(int);
 
 int main(void) {
@@ -43,21 +45,21 @@ int main(void) {
 static int compute_smallest_number_of_notes(int n) {
     int total_notes = 0;
     while(n) {
-        if(n >= 100) {
-            total_notes += (n / 100);
-            n %= 100;
-        } else if(n >= 50) {
-            total_notes += (n / 50);
-            n %= 50;
-        } else if(n >= 10) {
-            total_notes += (n / 10);
-            n %= 10;
-        } else if(n >= 5) {
-            total_notes += (n / 5);
-            n %= 5;
-        } else if(n >= 2) {
+        if(n >= HUNDRED) {
+            total_notes += (n / HUNDRED);
+            n %= HUNDRED;
+        } else if(n >= FIFTY) {
+            total_notes += (n / FIFTY);
+            n %= FIFTY;
+        } else if(n >= TEN) {
+            total_notes += (n / TEN);
+            n %= TEN;
+        } else if(n >= FIVE) {
+            total_notes += (n / FIVE);
+            n %= FIVE;
+        } else if(n >= TWO) {
             total_notes += (n >> 1);
-            n %= 2;
+            n %= TWO;
         } else {
             total_notes += n;
             n = 0;
