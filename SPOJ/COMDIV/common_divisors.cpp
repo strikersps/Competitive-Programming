@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
 
 #define FAST_IO(value) std :: ios :: sync_with_stdio(value); std :: cin.tie(value); std :: cout.tie(value)
 #define MOD 10000000007 // Constant (prime number) used in most competitive programming problems to reduce the answer to a 32-bit integer.
