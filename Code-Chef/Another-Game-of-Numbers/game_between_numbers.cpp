@@ -15,7 +15,7 @@
  * GNU General Public License for more details.
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
 #include <cmath>
 
 typedef unsigned long long ull_t;
