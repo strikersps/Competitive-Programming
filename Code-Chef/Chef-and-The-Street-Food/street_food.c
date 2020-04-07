@@ -1,5 +1,5 @@
 /*
- * Problem Statement: https://www.codechef.com/LTIME80B/problems/STFOOD
+ * Problem Statement:
  * Author: striker
  *
  * Copyright 2020 striker
@@ -29,52 +29,54 @@ typedef long long ll_t;
 
 typedef struct Point2D {
     int x, y;
-} point_2d;
+} point_2d_t;
 
 #define MOD (1000000000 + 7) // Prime Number
 #define PI 3.141592653589793 // Number of digits(15) of Pi which JPL uses for Interplanetary Caculations.
+#define GOLDEN_RATIO 1.618033988749895 // Number of digits(15).
 
 #define MEMORY_ALLOCATION_FAILED_ERROR(variable, bytes) fprintf(stderr, "Line number: %u: Not able to allocate <%lu> bytes of memory to <%s> variable.\n", __LINE__, (bytes), #variable)
 #define CONSTRAINTS_OUT_OF_BOUND_ERROR(variable, constraints) fprintf(stderr, "Line number: %u: Constraints not satisfied for the variable <%s>, i.e. %s.\n", __LINE__, #variable, #constraints)
+#define SCANF_READ_ERROR(expected_return_val) fprintf(stderr, "Line number: %u: scanf() read error!\nExpected-Return-Value: %d.\n", __LINE__, expected_return_val); exit(0)
+#define STREAM_LINK_ERROR(file_path, stream_name) fprintf(stderr, "Line number: %u: Stream Link Error! Not able to link <%s> file to <%s> stream.\n", __LINE__, #file_path, #stream_name); exit(0);
 #define INITIALISE_INT_CONTAINER_ZERO(container, bytes) memset(container, 0, (bytes))
 #define INITIALISE_CHAR_CONTAINER_ZERO(container, bytes) memset(container, '0', (bytes))
 #define FIND_MAX(a, b) (a) > (b) ? (a) : (b)
 #define FIND_MIN(a, b) (a) < (b) ? (a) : (b)
 #define FIND_MID(start, end) (((end) - (start)) >> 1) + (start)
 
+// The below function macros refers to the GCC functions for doing computation directly on the bit-level of a number.
+#define COMPUTE_SET_BITS(number) __builtin_popcountll(number) // Returns the number of set-bits in number (unsigned long long).
+#define COMPUTE_PARITY(number) __builtin_parityll(number) // Returns the parity of the number (unsigned long long) i.e. True if 1's are odd else False.
+#define COUNT_LEAD_ZEROES(number) __builtin_clzll(number) // Returns the count of lead zeroes before first set-bit from MSB in number (unsigned long long).
+#define COUNT_TRAIL_ZEROES(number) __builtin_ctzll(number) // Return the count of trailing zeroes in number(unsigned long long).
+
 int main(void) {
-    #ifndef ONLINE_JUDGE
-        freopen("test-cases/test-case-1.in", "r", stdin);
-        freopen("test-cases/test-case-1.out", "w", stdout);
-    #endif
     int test;
-    scanf("%d", &test);
-    if(test < 1) {
-        CONSTRAINTS_OUT_OF_BOUND_ERROR(test, test value cannot be 0 or -ve);
-        exit(0);
+    if(1 != scanf("%d", &test)) {
+        SCANF_READ_ERROR(1);
     }
-
     typedef struct street_food {
-        ull_t shop, price, people_count;
+        int tot_customers;
+        int price;
+        int tot_stores;
     } street_food_t;
-
     while(test--) {
         int n;
-        scanf("%d", &n);
-        if(n < 1) {
-            CONSTRAINTS_OUT_OF_BOUND_ERROR(n, n cannot be 0 or -ve);
-            exit(0);
+        if(1 != scanf("%d", &n)) {
+            SCANF_READ_ERROR(1);
         }
-        street_food_t food[n];
-        ull_t max_profit = 0;
+        street_food_t food_detail[n];
+        ll_t max_profit = 0;
         for(int i = 0; i < n; ++i) {
-            scanf("%llu%llu%llu", &food[i].shop, &food[i].people_count, &food[i].price);
-            ull_t profit_earned = (food[i].people_count / (1 + food[i].shop)) * food[i].price;
-            if(profit_earned > max_profit) {
-                max_profit = profit_earned;
+            if(3 == scanf("%d%d%d", &food_detail[i].tot_stores, &food_detail[i].tot_customers, &food_detail[i].price)) {
+                ll_t profit_earned = food_detail[i].price * (food_detail[i].tot_customers / (1 + food_detail[i].tot_stores));
+                max_profit = FIND_MAX(max_profit, profit_earned);
+                continue;
             }
+            SCANF_READ_ERROR(3);
         }
-        printf("%llu\n", max_profit);
+        printf("%lld\n", max_profit);
     }
     return EXIT_SUCCESS;
 }
