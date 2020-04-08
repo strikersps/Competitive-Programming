@@ -4,14 +4,13 @@ Author: striker
 '''
 
 def main():
-    test = int(input())
-    data = {'B': 'BattleShip','C':'Cruiser','D':'Destroyer','F':'Frigate'}
-    for i in range(test):
-        id = input().upper()
-        if data.get(id) == None:
+    data = {'B': 'BattleShip','C': 'Cruiser','D': 'Destroyer','F': 'Frigate'}
+    for i in range(int(input())):
+        data_id = input().upper()
+        if data.get(data_id) == None:
             continue
         else:
-            print(data[id])
+            print(data[data_id])
 
 if __name__ == "__main__":
     main()
