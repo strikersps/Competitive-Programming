@@ -3,7 +3,16 @@
  * Author: striker
 */
 
-#include <bits/stdc++.h>
+#include <iostream>
+#include <string>
+#include <map>
+#include <unordered_map>
+#include <vector>
+#include <array>
+#include <numeric>
+#include <algorithm>
+#include <cstdio>
+#include <cmath>
 
 #define FAST_IO(value) std :: ios :: sync_with_stdio(value); std :: cin.tie(value)
 
