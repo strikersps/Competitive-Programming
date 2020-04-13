@@ -2,11 +2,11 @@
     Author: striker
 */
 
-#include<stdio.h>
-#include<inttypes.h>
-#include<stdlib.h>
-#include<stdbool.h>
-#include<assert.h>
+#include <stdio.h>
+#include <inttypes.h>
+#include <stdlib.h>
+#include <stdbool.h>
+#include <assert.h>
 
 bool is_partition_possible(uint8_t);
 
