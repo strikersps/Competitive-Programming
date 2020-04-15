@@ -65,6 +65,8 @@
 #define minimum(a, b) a = min(a, b)
 #define maximum(a, b) a = max(a, b)
 
+/*Locked Code From Here In Hacker-Rank i.e. You cannot change the code below.*/
+
 #include <iostream>
 #include <vector>
 using namespace std;
@@ -76,7 +78,7 @@ using namespace std;
 FUNCTION(minimum, <)
 FUNCTION(maximum, >)
 
-int main(void) {
+int main() {
     int n; cin >> n;
     vector<int> v(n);
     foreach(v, i) {
