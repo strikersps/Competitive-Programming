@@ -20,7 +20,7 @@ int main(void) {
         int n;
         std :: cin >> n;
         std :: vector <int> car_price(n);
-        for(register int i = 0; i < n; ++i) {
+        for(int i = 0; i < n; ++i) {
             std :: cin >> car_price[i];
         }
         std :: sort(car_price.rbegin(), car_price.rend()); // Sorts the data in decreasing order.
@@ -31,7 +31,7 @@ int main(void) {
 
 static int compute_maximum_profit(std :: vector <int> & car_price, const int n) {
     int max_profit = 0;
-    for(register int i = 0; i < n; ++i) {
+    for(int i = 0; i < n; ++i) {
         if(car_price[i] - i > 0) {
             car_price[i] -= i;
             max_profit = (max_profit + car_price[i]) % MOD;
