@@ -10,7 +10,7 @@
 #define FAST_IO(value) std :: ios :: sync_with_stdio(value); std :: cin.tie(value)
 #define MOD 1000000007
 
-static int compute_maximum_profit(std :: vector <int>, const int);
+static int compute_maximum_profit(std :: vector <int> &, const int);
 
 int main(void) {
     FAST_IO(0);
@@ -29,7 +29,7 @@ int main(void) {
     return 0;
 }
 
-static int compute_maximum_profit(std :: vector <int> car_price, const int n) {
+static int compute_maximum_profit(std :: vector <int> & car_price, const int n) {
     int max_profit = 0;
     for(register int i = 0; i < n; ++i) {
         if(car_price[i] - i > 0) {
