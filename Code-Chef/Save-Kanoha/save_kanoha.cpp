@@ -1,5 +1,5 @@
 /*
- * Problem Statement: https://www.codechef.com/LRNDSA03/problems/SAVKONO
+ * Problem Statement: https://www.codechef.com/problems/SAVKONO
  * Author: striker
  *
  * Copyright 2020 striker
