@@ -1,5 +1,5 @@
 # Problem Description
-Given a list of pairs . Each pair contains a food item and its price, For Ex: `(apple, 120), (banana,200) . . .` and so on.
+Given a list of pairs where each pair contains a food item and its price, For Ex: `(apple, 120), (banana,200) . . .` and so on.
 Specific food item may occur multiple times, For Ex: `(apple,200), (apple,280) . . .` so on.
 For each food item output the lowest, highest and average price(rounded down to nearest integer) for that item. The output list should be lexicographically (alphabetically) sorted by name of food.
 
@@ -37,6 +37,5 @@ banana 90 90 90
 Case #2:
 grape 180 200 190
 grapefruit 120 150 140
-
 Case #3:
 apple 100 101 100
