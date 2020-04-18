@@ -39,6 +39,8 @@ typedef long long ll_t;
 #define PI 3.141592653589793 // Number of digits(15) of Pi which JPL uses for Interplanetary Caculations.
 #define GOLDEN_RATIO 1.618033988749895 // Number of digits(15).
 
+static void solve_problem(const std :: map <std :: string, std :: vector <int>> &);
+
 int main(void) {
     FAST_IO(0);
     int test;
@@ -46,23 +48,27 @@ int main(void) {
     for(int t = 1; t <= test; ++t) {
         int n;
         std :: cin >> n;
-        std :: map <std :: string, std :: vector <int>> food_items;
+        std :: map <std :: string, std :: vector <int>> food_info;
         for(int i = 0; i < n; ++i) {
             std :: string food_name;
             int food_price;
             std :: cin >> food_name >> food_price;
-            food_items[food_name].push_back(food_price);
+            food_info[food_name].push_back(food_price);
         }
         std :: cout << "Case #" << t << ":" << std :: endl;
-        for(auto food_config = food_items.begin(); food_config != food_items.end(); ++food_config) {
-            std :: cout << food_config->first;
-            int min_val = *std :: min_element(food_config->second.begin(), food_config->second.end());
-            std :: cout << " " << min_val;
-            int max_val = *std :: max_element(food_config->second.begin(), food_config->second.end());
-            std :: cout << " " << max_val;
-            int avg_val = std :: accumulate(food_config->second.begin(), food_config->second.end(), 0) / food_config->second.size();
-            std ::  cout << " " << avg_val << std :: endl;
-        }
+        solve_problem(food_info);
     }
     return 0;
+}
+
+static void solve_problem(const std :: map <std :: string, std :: vector <int>> & food_info) {
+    for(auto itr = food_info.begin(); itr != food_info.end(); ++itr) {
+        std :: cout << itr->first;
+        int min_val = *std :: min_element(itr->second.begin(), itr->second.end());
+        std :: cout << " " << min_val;
+        int max_val = *std :: max_element(itr->second.begin(), itr->second.end());
+        std :: cout << " " << max_val;
+        int avg_val = std :: accumulate(itr->second.begin(), itr->second.end(), 0) / itr->second.size();
+        std :: cout << " " << avg_val << std :: endl;
+    }
 }
