@@ -66,7 +66,7 @@ int main(void) {
 }
 
 static int right_circular_shift_by_m(int n, const int m) {
-    int preserved_data = (n & ((1 << m) - 1)) << (16 -m);
+    int preserved_data = (n & ((1 << m) - 1)) << (16 - m);
     return (n >> m) | preserved_data;
 }
 
