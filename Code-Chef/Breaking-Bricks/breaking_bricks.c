@@ -13,10 +13,12 @@
 static unsigned int compute_total_hits(const int, int *const);
 
 int main(void) {
+    /*
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
+    */
     int test;
     scanf("%d", &test);
     if(test < 1 || test > 64) {
@@ -54,7 +56,7 @@ static unsigned int compute_total_hits(const int s, int *const stack_width) {
         min_hits = 1;
     } else {
         for(unsigned int i = 0; i < STACK_SIZE; ++i) {
-            if(s >= (stack_width[i] + stack_width[i + 1])) {
+            if((i < 2) && (s >= (stack_width[i] + stack_width[i + 1]))) {
                 ++i;
             }
             ++min_hits;
