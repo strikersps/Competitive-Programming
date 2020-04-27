@@ -16,7 +16,7 @@ int main(void) {
 
 static int compute_last_digit(int a, int b, const int modulus) {
 	if(b == 1) {
-		return a % 10;
+		return a % modulus;
 	}
 	if(a == 1) {
 		return a;
