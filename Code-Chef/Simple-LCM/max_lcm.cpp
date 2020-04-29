@@ -80,7 +80,6 @@ static ll_t compute_max_lcm(const std :: vector <ll_t> & sequence, const int n) 
             t4 = std :: max(t4, number);
         }
     }
-    // std :: cout << t1 << " " << t2 << " " << t3 << " " << t4 << std :: endl;
     for(int i = 0; i < n; ++i) {
         max_lcm = std :: max(max_lcm, COMPUTE_LCM(t1, sequence[i]));
     }
