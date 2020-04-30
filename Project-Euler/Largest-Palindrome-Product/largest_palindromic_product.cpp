@@ -62,12 +62,6 @@ int main(void) {
     std :: cin >> test;
     std :: set <int> palindrome_product;
     generate_palindrome_product(palindrome_product);
-    /*
-    for(const int & number: palindrome_product) {
-        std :: cout << number << " ";
-    }
-    std :: cout << std :: endl;
-    */
     while(test--) {
         int limit;
         std :: cin >> limit;
