@@ -1,6 +1,6 @@
 # Problem Statement
-Consider an algorithm that takes as input a positive integer `n`. If `n` is even, the algorithm divides it by two, and if `n` is odd, the algorithm multiplies it by three and adds one. The algorithm repeats this, until `n` is one.  
-For example, the sequence for `n=3` is as follows:  
+Consider an algorithm that takes as input a positive integer `n`. If `n` is even, the algorithm divides it by two, and if `n` is odd, the algorithm multiplies it by three and adds one. The algorithm repeats this, until `n` is one.
+For example, the sequence for `n=3` is as follows:
 3→10→5→16→8→4→2→1
 
 Your task is to simulate the execution of the algorithm for a given value of `n`.
@@ -13,16 +13,19 @@ The only input line contains an integer `n`.
 
 Print a line that contains all values of `n` during the algorithm.
 
-**Constraints**  
-1 ≤ n ≤ 1000000  
+**Constraints**
+1 ≤ n ≤ 1000000
 
-**Example**  
+**Example**
 Input:
-3  
+3
 Output:
-3 10 5 16 8 4 2 1  
+3 10 5 16 8 4 2 1
 
 
 | Time Limit| Memory |
 | --------- | -------|
 | 1.00 sec  | 512 MB |
+
+
+Reference: https://cses.fi/problemset/task/1068
