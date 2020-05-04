@@ -61,7 +61,7 @@ int main(void) {
     if(1 != scanf("%d", &test)) {
         SCANF_READ_ERROR(1);
     }
-    getchar_unlocked();
+    getchar_unlocked(); // Empties the input buffer as there is '\n' still stored in the buffer when test value is being read from STDIN.
     while(test--) {
         int sequence[MAX_SIZE];
         char read_char;
