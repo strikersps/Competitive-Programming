@@ -69,15 +69,15 @@ int main(void) {
 }
 
 static int compute_minimum_swaps(std :: map <int, int> & sequence, const int n) {
-    std :: unordered_set <int> visited;
-    int min_swaps = 0, cycle_length = 0;
+    std :: set <int> visited;
+    int min_swaps = 0;
     for(int i = 1; i <= n; ++i) {
         if((visited.empty() || !visited.count(i)) && sequence[i] != i) {
+            int cycle_length = 0;
             int j = i;
             for(; sequence[j] != i; visited.insert(j), ++cycle_length, j = sequence[j]);
             visited.insert(j);
             min_swaps += cycle_length;
-            cycle_length = 0;
         }
     }
     return min_swaps;
