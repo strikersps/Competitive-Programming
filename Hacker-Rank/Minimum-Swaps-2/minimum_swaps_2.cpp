@@ -62,14 +62,14 @@ int main(void) {
     for(int i = 0; i < n; ++i) {
         int number;
         std :: cin >> number;
-        sequence[number] = i + 1;
+        sequence[i + 1] = number;
     }
     std :: cout << compute_minimum_swaps(sequence, n) << std :: endl;
     return 0;
 }
 
 static int compute_minimum_swaps(std :: map <int, int> & sequence, const int n) {
-    std :: set <int> visited;
+    std :: unordered_set <int> visited;
     int min_swaps = 0;
     for(int i = 1; i <= n; ++i) {
         if((visited.empty() || !visited.count(i)) && sequence[i] != i) {
