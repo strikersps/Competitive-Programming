@@ -63,7 +63,6 @@ int main(void) {
         std :: cin >> sequence[i];
     }
     std :: sort(sequence.begin(), sequence.end());
-    std :: cout << std :: endl;
     std :: cout << compute_max_lcm(sequence, n) << std :: endl;
     return 0;
 }
