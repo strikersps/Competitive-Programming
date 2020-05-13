@@ -4,7 +4,7 @@ Author: striker
 '''
 
 '''
-Algorithm Explaination:
+Algorithm Explanation:
 1. Compute and store all the Fibonacci Numbers till 4788 because, 4788th fibonacii number is last number consist of 1000 digits.
 2. As fibonacci numbers is an stricly increasing sequence i.e. after pre-computation you will have a strictly increasing sequence, that means you can use Binary-Search for each test-case and if for the case the number is present in the list print "YES" otherwise "NO".
 
