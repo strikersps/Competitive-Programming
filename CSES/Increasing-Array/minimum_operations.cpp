@@ -47,7 +47,7 @@ typedef long long ll_t;
 // C and C++ % operator is not a modular arithmethic operator rather its a remainder operator which gives remainder when a / b;
 // Refer: https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
 ll_t compute_mod(ll_t a, ll_t b) {
-    assert(b != 0); // Modulus is not defined when denominator is zero.
+    assert(b > 0); // Denominator must be positive.
     ll_t rem = a % b;
     return rem < 0 ? b + rem : rem;
 }
