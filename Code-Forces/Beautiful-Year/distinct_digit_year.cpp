@@ -117,7 +117,7 @@ int main(void) {
 
 static bool distinct_digit(int n) {
     bool has_distinct_digit = true;
-    std :: set <int> digit_visited;
+    std :: unordered_set <int> digit_visited;
     while(n) {
         if(!digit_visited.empty() && digit_visited.count(n % 10)) {
             has_distinct_digit = false;
