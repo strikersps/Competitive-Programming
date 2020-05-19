@@ -2,10 +2,10 @@
  *  Author: striker
 */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-#include<stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
 
 typedef unsigned long long ull_t;
 typedef long long ll_t;
@@ -19,10 +19,12 @@ enum alphabet_mapping {A = 1, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R,
 static ull_t compute_number_of_decodings(char[]);
 
 int main(void) {
+    /*
     #ifndef ONLINE_JUDGE
         freopen("test-cases/test-case-1.in", "r", stdin);
         freopen("test-cases/test-case-1.out", "w", stdout);
     #endif
+    */
     while(true) {
         char encoded_data[MAX_STRING_LENGTH];
         scanf("%s", encoded_data);
