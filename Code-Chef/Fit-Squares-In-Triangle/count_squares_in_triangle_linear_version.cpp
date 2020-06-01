@@ -105,6 +105,7 @@ int main(void) {
     while(test--) {
         int base_length;
         std :: cin >> base_length;
+        // The following solution time complexity: O(base_length / square_side_length). However, there exist a O(1) time solution also.
         ll_t total_squares = 0;
         const ll_t square_side_length = 2;
         for(ll_t i = 0; i < base_length / square_side_length; ++i) {
