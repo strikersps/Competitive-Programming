@@ -105,7 +105,9 @@ int main(void) {
     while(test--) {
         int base_length;
         std :: cin >> base_length;
-        std :: cout << (base_length / 2 - 1) * (base_length / 2) / 2 << NEW_LINE;
+        const int side_length = 2;
+        int base_length_by_side_length = base_length / side_length;
+        std :: cout << ((base_length_by_side_length - 1) * base_length_by_side_length) / 2 << NEW_LINE;
     }
     return 0;
 }
