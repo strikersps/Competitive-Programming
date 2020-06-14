@@ -112,24 +112,24 @@ static std :: string password_decryptor(const std :: string & encrypted_string) 
     std :: string decrypted_string;
     std :: stack <char> characters;
     for(int i = 0; i < (int) encrypted_string.size(); ++i) {
-        if(encrypted_string[i] >= '1' && encrypted_string[i] <= '9') {
-            characters.push(encrypted_string[i]);
+        if(encrypted_string.at(i) >= '1' && encrypted_string.at(i) <= '9') {
+            characters.push(encrypted_string.at(i));
             continue;
         }
-        if(!characters.empty() && encrypted_string[i] == '0') {
+        if(!characters.empty() && encrypted_string.at(i) == '0') {
             decrypted_string += characters.top();
             characters.pop();
             continue;
         }
         if(encrypted_string[i] == '*') {
-            decrypted_string += encrypted_string[i - 1];
-            decrypted_string += encrypted_string[i - 2];
+            decrypted_string += encrypted_string.at(i - 1);
+            decrypted_string += encrypted_string.at(i - 2);
             continue;
         }
-        if(((i < (int) encrypted_string.size() - 2) && encrypted_string[i + 2] == '*') || ((i < (int) encrypted_string.size() - 1) && encrypted_string[i + 1] == '*')) {
+        if(((i < (int) encrypted_string.size() - 2) && encrypted_string.at(i + 2) == '*') || ((i < (int) encrypted_string.size() - 1) && encrypted_string.at(i + 1) == '*')) {
             continue;
         }
-        decrypted_string += encrypted_string[i];
+        decrypted_string += encrypted_string.at(i);
     }
     return decrypted_string;
 }
