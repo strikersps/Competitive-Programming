@@ -3,14 +3,14 @@ Problem Statement: Refer to the readme.md file.
 Author: striker
 '''
 
-def check_anagram(src, dst):
-    if not len(src) == len(dst):
+def check_anagram(string1, string2):
+    if not len(string1) == len(string2):
         return False
     freq_map = [0] * 26
     is_anagram = True
-    for alphabet in src:
+    for alphabet in string1:
         freq_map[ord(alphabet) - ord('a')] += 1
-    for alphabet in dst:
+    for alphabet in string2:
         if not freq_map[ord(alphabet) - ord('a')]:
             is_anagram = False
             break
@@ -18,13 +18,8 @@ def check_anagram(src, dst):
     return is_anagram
 
 def main():
-    for test in range(int(input().rstrip())):
-        src = input()
-        dst = input()
-        if not check_anagram(src, dst):
-            print("{}".format("NO"))
-        else:
-            print("{}".format("YES"))
+    for test in range(int(input().strip())):
+        print("YES" if check_anagram(input().strip(), input().strip()) else "NO")
 
 if __name__ == "__main__":
     main()

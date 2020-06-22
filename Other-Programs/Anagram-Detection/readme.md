@@ -1,8 +1,8 @@
 # Problem Description:
 
-Two strings are said to be anagrams of one another if you can turn the first string into the second by rearranging its letters.  
-For example, `table` and `bleat` are anagrams, as are `tear` and `rate`.  
-Your job is to write a function that takes in two strings as input and determines whether they're anagrams of one another.  
+Two strings are said to be anagrams of one another if you can turn the first string into the second by rearranging its letters.
+For example, `table` and `bleat` are anagrams, as are `tear` and `rate`.
+Your job is to write a function that takes in two strings as input and determines whether they're anagrams of one another or not.
 
 Assumptions:
 1. Your algorithm should be case-sensitive, i.e. `tenet` and `TENET` are different string.
