@@ -12,5 +12,5 @@ Assumptions:
 
 **NOTE:**
 * The `python` program file: `anagram_detection_another_solution_2.py` solution is based on a clever trick to check whether two strings are anagrams of each other or not. (Inspired by the [Fermat's Library Twitter Post](https://twitter.com/fermatslibrary/status/1275066521450975234?s=20)).
-![Clever Algorithm To Find Whether or not two words are Anagrams]().
+![Clever Algorithm To Find Whether or not two words are Anagrams](https://github.com/strikersps/Competitive-Programming/blob/master/Other-Programs/Anagram-Detection/Clever%20Algorithm%20To%20Find%20Whether%20or%20not%20two%20words%20are%20Anagrams.jpeg).
 
