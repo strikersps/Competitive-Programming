@@ -9,3 +9,8 @@ Assumptions:
 2. Strings can be of different lengths.
 3. A string is an anagram of itself.
 4. All the letters of the string will be lower-case english alphabets.
+
+**NOTE:**
+* The `python` program file: `anagram_detection_another_solution_2.py` solution is based on a clever trick to check whether two strings are anagrams of each other or not. (Inspired by the [Fermat's Library Twitter Post](https://twitter.com/fermatslibrary/status/1275066521450975234?s=20)).
+![Clever Algorithm To Find Whether or not two words are Anagrams]().
+
