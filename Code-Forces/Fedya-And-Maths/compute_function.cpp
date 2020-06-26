@@ -112,7 +112,7 @@ int main(void) {
 static int compute_function(std :: string & n) {
     int digit_count = n.size();
     if(digit_count == 1) {
-        return !((n[0] - '0') % 4) ? 4 : 0;
+        return !((n.at(0) - '0') % 4) ? 4 : 0;
     }
-    return !((10 * (n[digit_count - 2] - '0') + (n[digit_count - 1] - '0')) % 4) ? 4 : 0;
+    return !((10 * (n.at(digit_count - 2) - '0') + (n.at(digit_count - 1) - '0')) % 4) ? 4 : 0;
 }
