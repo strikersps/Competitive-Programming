@@ -120,7 +120,7 @@ int main(void) {
 }
 
 static int compute_maximum_coins(const std :: vector <std :: vector <int>> & matrix, const int nrows, const int ncols) {
-    std :: vector <int> cost_matrix(ncols, 0);
+    std :: vector <ll_t> cost_matrix(ncols, 0);
     cost_matrix.at(0) = matrix[0][0];
     for(int i = 1; i < ncols; ++i) {
         cost_matrix.at(i) = matrix[0][i] + cost_matrix.at(i - 1);
