@@ -113,7 +113,7 @@ static ll_t compute_number_of_pairs(const int n, const int m) {
     ll_t pair_count = 0LL;
     for(int i = 1; i <= n; ++i) {
         pair_count += ((i + m) / 5LL - (i + 1LL) / 5LL);
-        if(!((i + 1LL) % 5)) {
+        if(!((i + 1LL) % 5LL)) {
             ++pair_count;
         }
     }
