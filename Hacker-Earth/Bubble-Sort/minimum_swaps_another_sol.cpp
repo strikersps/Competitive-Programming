@@ -94,49 +94,22 @@ bool check_perfect_sequare(ll_t n) {
 // Computes the number of leading zeroes in the binary representation of n (64-Bit). The value will be 64 - (number of bits required to represent n).
 #define COMPUTE_LEADING_ZEROES(number) __builtin_clzll(number)
 
-// Computes the number of trailing zeroes in the binary representation of n (64-Bit). The value will always be zeroe if n is odd.
+// Computes the number of trailing zeroes in the binary representation of n (64-Bit). The value will always be zero if n is odd.
 #define COMPUTE_TRAILING_ZEROES(number) __builtin_ctzll(number)
 
 /*END-OF CODE-TEMPLATE*/
-
-static void swap_data(int &, int &);
-static int bubble_sort(std :: vector <int> &, const int);
 
 int main(void) {
     FAST_IO(0);
     int n;
     std :: cin >> n;
     std :: vector <int> sequence(n);
-    for(int & number: sequence) {
-        std :: cin >> number;
-    }
-    std :: cout << bubble_sort(sequence, n) << NEW_LINE;
-    return 0;
-}
-
-static void swap_data(int & a, int & b) {
-    int temp = a;
-    a = b;
-    b = temp;
-}
-
-static int bubble_sort(std :: vector <int> & sequence, const int n) {
-    if(n == 1) {
-        return 0;
-    }
     int count = 0;
-    for(int i = n - 1; i >= 0; --i) {
-        bool is_sorted = true;
-        ++count;
-        for(int j = 0; j < i; ++j) {
-            if(sequence[j] > sequence[j + 1]) {
-                swap_data(sequence[j], sequence[j + 1]);
-                is_sorted = false;
-            }
-        }
-        if(is_sorted) {
-            break;
-        }
+    for(int i = 0; i < n; ++i) {
+        std :: cin >> sequence.at(i);
+        --sequence.at(i);
+        count = std :: max(count, i - sequence.at(i));
     }
-    return count;
+    std :: cout << ++count << NEW_LINE;
+    return 0;
 }
