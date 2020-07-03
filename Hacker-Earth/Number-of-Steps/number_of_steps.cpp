@@ -99,37 +99,37 @@ bool check_perfect_sequare(ll_t n) {
 
 /*END-OF CODE-TEMPLATE*/
 
-static int compute_minimum_operations(const std :: vector <long> &, const std :: vector <long> &, const int);
+static int compute_minimum_operations(const std :: vector <int> &, const std :: vector <int> &, const int);
 
 int main(void) {
     FAST_IO(0);
     int n;
     std :: cin >> n;
-    std :: vector <long> s1(n), s2(n);
-    for(long & number: s1) {
+    std :: vector <int> s1(n), s2(n);
+    for(int & number: s1) {
         std :: cin >> number;
     }
-    for(long & number: s2) {
+    for(int & number: s2) {
         std :: cin >> number;
     }
     std :: cout << compute_minimum_operations(s1, s2, n) << NEW_LINE;
     return 0;
 }
 
-static int compute_minimum_operations(const std :: vector <long> & s1, const std :: vector <long> & s2, const int n) {
+static int compute_minimum_operations(const std :: vector <int> & s1, const std :: vector <int> & s2, const int n) {
     if(n == 1) {
         return 0;
     }
-    long min_a = *std :: min_element(s1.begin(), s1.end());
+    int min_a = *std :: min_element(s1.begin(), s1.end());
     int min_operations = 0;
-    for(long t = min_a; t >= 0; --t) {
+    for(int target = min_a; target >= 0; --target) {
         min_operations = 0;
         for(int i = 0; i < n; ++i) {
-            if(t == s1[i]) {
+            if(target == s1[i]) {
                 continue;
             }
-            if(s2[i] > 0 && !((s1[i] - t) % s2[i])) {
-                min_operations += (s1[i] - t) / s2[i];
+            if(s2[i] > 0 && !((s1[i] - target) % s2[i])) {
+                min_operations += (s1[i] - target) / s2[i];
                 continue;
             }
             min_operations = -1;
