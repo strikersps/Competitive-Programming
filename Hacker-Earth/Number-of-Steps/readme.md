@@ -39,4 +39,4 @@ For every element in A we check the condition and accordingly update the value o
 15: (15 - 5) mod 5 == 0; min_operations = 8.
 ```
 
-You can check source-code (`C, C++ and Python`) for the implementation of above explained logic in `number_of_steps.cpp` file.
+You can check source-code (`C, C++ and Python`) for the implementation of above explained logic in `number_of_steps.c, number_of_steps.cpp and number_of_steps.py` files.
