@@ -31,7 +31,7 @@ B = {2, 2, 1, 3, 5}
 
 min(A) = 5
 target value = 5.
-For every element in A we check the condition and accordingly value of min_operations gets updated:
+For every element in A we check the condition and accordingly update the value of min_operations variable:
  5: 5 == 5; min_operations = 0.
  7: (7 - 5) mod 2 == 0; min_operations = 1.
 10: (10 - 5) mod 1 == 0; min_operations = 6.
