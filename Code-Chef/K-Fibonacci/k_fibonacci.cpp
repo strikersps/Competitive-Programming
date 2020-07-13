@@ -111,11 +111,11 @@ int main(void) {
 
 static int compute_nth_term(const int n, const int k) {
     if(n <= k) {
-        return 1LL;
+        return 1;
     }
     std :: vector <ll_t> memoization(n, 0LL);
     for(int i = 0; i < k; ++i) {
-        memoization[i] = 1;
+        memoization[i] = 1LL;
     }
     ll_t window_sum = k;
     memoization[k] = k;
