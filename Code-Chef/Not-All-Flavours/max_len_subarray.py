@@ -28,7 +28,7 @@ def compute_max_subarray_len(cake_flavour, n, k):
 def main():
     for test in range(int(input().strip())):
         n, k = tuple(map(int, input().strip().split()))
-        print(f'{compute_max_subarray_len(list(map(int, input().strip().split())), n, k)}')
+        print(compute_max_subarray_len(list(map(int, input().strip().split())), n, k))
 
 if __name__ == "__main__":
     main()
