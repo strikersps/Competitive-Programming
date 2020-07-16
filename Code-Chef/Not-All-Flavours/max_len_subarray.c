@@ -61,17 +61,21 @@ int main(void) {
     }
     while(test--) {
         int n, k;
-        if(2 == scanf("%d%d", &n, &k)) {
-            int cake_flavour[n];
-            for(int i = 0; i < n; ++i) {
-                if(1 != scanf("%d", cake_flavour + i)) {
-                    SCANF_READ_ERROR(1);
-                }
-            }
-            printf("%d\n", compute_length_of_subaray(cake_flavour, n, k));
-            continue;
+        if(2 != scanf("%d%d", &n, &k)) {
+            SCANF_READ_ERROR(2);
         }
-        SCANF_READ_ERROR(2);
+        int *const cake_flavour = calloc((size_t) n, sizeof*cake_flavour);
+        if(!cake_flavour) {
+            MEMORY_ALLOCATION_FAILED_ERROR(cake_flavour, (size_t) n * sizeof*cake_flavour);
+            exit(0);
+        }
+        for(int i = 0; i < n; ++i) {
+            if(1 != scanf("%d", cake_flavour + i)) {
+                SCANF_READ_ERROR(1);
+            }
+        }
+        printf("%d\n", compute_length_of_subaray(cake_flavour, n, k));
+        free(cake_flavour);
     }
     return EXIT_SUCCESS;
 }
@@ -82,7 +86,11 @@ static int compute_length_of_subaray(int cake_flavour[], const int n, const int 
     }
     int subarray_len, max_subarray_len;
     subarray_len = max_subarray_len = 0;
-    int freq_map[k];
+    int *const freq_map = calloc((size_t) k, sizeof*freq_map);
+    if(!freq_map) {
+        MEMORY_ALLOCATION_FAILED_ERROR(freq_map, (size_t) k * sizeof*freq_map);
+        exit(0);
+    }
     INITIALISE_INT_CONTAINER_ZERO(freq_map, (size_t) k * sizeof(int));
     for(int start = 0, end = 0, unique_number_count = 0; start < n; ++start, --subarray_len) {
         while(end < n && (freq_map[cake_flavour[end] - 1] || unique_number_count < (k - 1))) {
@@ -102,5 +110,6 @@ static int compute_length_of_subaray(int cake_flavour[], const int n, const int 
             --unique_number_count;
         }
     }
+    free(freq_map);
     return max_subarray_len;
 }
