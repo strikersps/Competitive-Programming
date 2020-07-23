@@ -125,10 +125,6 @@ static void execute_queuries(const std :: vector <int> & sequence, const int n) 
         int start_range, end_range;
         std :: cin >> start_range >> end_range;
         assert(start_range <= end_range);
-        if(!start_range) {
-            std :: cout << prefix_sum.at(end_range) << NEW_LINE;
-            continue;
-        }
-        std :: cout << prefix_sum.at(end_range) - prefix_sum.at(start_range - 1) << NEW_LINE;
+        std :: cout << (!start_range ? prefix_sum[end_range] : prefix_sum.at(end_range) - prefix_sum.at(start_range - 1)) << NEW_LINE;
     }
 }
