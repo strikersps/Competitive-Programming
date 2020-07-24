@@ -15,23 +15,27 @@
  * GNU General Public License for more details.
 */
 
-#include <iostream>
-#include <array>
-#include <vector>
-#include <stack>
-#include <queue>
-#include <deque>
-#include <set>
-#include <unordered_set>
-#include <map>
-#include <unordered_map>
-#include <string>
-#include <numeric>
 #include <algorithm>
+#include <array>
+#include <cassert>
 #include <cmath>
 #include <cstdio>
 #include <cstring>
-#include <cassert>
+#include <deque>
+#include <iostream>
+#include <iomanip>
+#include <map>
+#include <numeric>
+#include <queue>
+#include <stack>
+#include <set>
+#include <string>
+#include <tuple>
+#include <unordered_map>
+#include <unordered_set>
+#include <vector>
+
+/* START of CODE-TEMPLATE */
 
 typedef unsigned long long ull_t;
 typedef long long ll_t;
@@ -52,6 +56,8 @@ ll_t compute_mod(ll_t a, ll_t b) {
     return rem < 0 ? b + rem : rem;
 }
 
+/* END of CODE-TEMPLATE */
+
 static std :: pair <int, int> find_winner(const int);
 
 int main(void) {
@@ -71,7 +77,7 @@ static std :: pair <int, int> find_winner(const int total_rounds) {
         std :: cin >> p1_score >> p2_score;
         cumulative_score_p1 += p1_score;
         cumulative_score_p2 += p2_score;
-        geaif(cumulative_score_p1 > cumulative_score_p2) {
+        if(cumulative_score_p1 > cumulative_score_p2) {
             lead_score = cumulative_score_p1 - cumulative_score_p2;
             if(lead_score > max_lead) {
                 max_lead = lead_score;
@@ -85,5 +91,5 @@ static std :: pair <int, int> find_winner(const int total_rounds) {
             }
         }
     }
-    return std :: make_pair(player_id, max_lead);
+    return {player_id, max_lead};
 }
