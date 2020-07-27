@@ -3,6 +3,6 @@
 
 * This repository consists of solutions to Facebook Hacker-Cup problems in `C, C++ and Python`.
 
-* You can read more about the competition [**here.**](https://www.facebook.com/codingcompetitions/hacker-cup).
+* You can read more about the competition [**here**](https://www.facebook.com/codingcompetitions/hacker-cup).
 
 * Platform Link: https://www.facebook.com/codingcompetitions/hacker-cup
