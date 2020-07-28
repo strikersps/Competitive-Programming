@@ -1,6 +1,6 @@
 # Segregate Even-Odd Problem Statement
 
-* Given an array of integers, rearrange all even integer before all odd numbers, but keep their original order preserved.
+* Given an array of integers, rearrange all the even numbers before all the odd numbers, but keep their original order preserved.
 
 ```
 Input
