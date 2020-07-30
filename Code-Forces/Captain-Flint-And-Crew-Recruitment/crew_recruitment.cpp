@@ -110,15 +110,10 @@ int main(void) {
             std :: cout << "NO" << NEW_LINE;
         } else {
             std :: cout << "YES" << NEW_LINE;
-            int d = n - (6 + 10 + 14);
-            if(n == 36) {
-                std :: cout << 6 << " " << 10 << " " << 15 << " " << 5 << NEW_LINE;
-            } else if(n == 40) {
-                std :: cout << 6 << " " << 10 << " " << 21 << " " << 3 << NEW_LINE;
-            } else if(n == 44) {
-                std :: cout << 6 << " " << 15 << " " << 21 << " " << 2 << NEW_LINE;
+            if(n == 36 || n == 40 || n == 44) {
+                std :: cout << 6 << " " << 10 << " " << 15 << " " << n - 31 << NEW_LINE;
             } else {
-                std :: cout << 6 << " " << 10 << " " << 14 << " " << d << NEW_LINE;
+                std :: cout << 6 << " " << 10 << " " << 14 << " " << n - 30 << NEW_LINE;
             }
         }
     }
