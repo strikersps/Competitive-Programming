@@ -99,30 +99,46 @@ bool check_perfect_sequare(ll_t n) {
 
 /*END-OF CODE-TEMPLATE*/
 
+static bool check_palindrome(const std :: string &);
 static std :: string string_rearrangement(std :: string &, std :: vector <int> &);
 
 int main(void) {
     FAST_IO(0);
     std :: string given_string;
     std :: cin >> given_string;
-    std :: vector <int> alphabet_frequency(26, 0);
-    for(auto & character: given_string) {
-        ++alphabet_frequency[character - 'A'];
-    }
-    int odd_freq_count = 0, even_freq_count = 0;
-    for(const int & freq: alphabet_frequency) {
-        if(freq % 2) {
-            ++odd_freq_count;
+    if(check_palindrome(given_string)) {
+        std :: cout << given_string << NEW_LINE;
+    } else {
+        std :: vector <int> alphabet_frequency(26, 0);
+        for(auto & character: given_string) {
+            ++alphabet_frequency[character - 'A'];
+        }
+        int odd_freq_count = 0, even_freq_count = 0;
+        for(const int & freq: alphabet_frequency) {
+            if(freq % 2) {
+                ++odd_freq_count;
+            } else {
+                ++even_freq_count;
+            }
+        }
+        if((given_string.size() % 2 && odd_freq_count > 1) || (!(given_string.size() % 2) && odd_freq_count > 0)) {
+            std :: cout << "NO SOLUTION" << NEW_LINE;
         } else {
-            ++even_freq_count;
+            std :: cout << string_rearrangement(given_string, alphabet_frequency) << NEW_LINE;
         }
     }
-    if((given_string.size() % 2 && odd_freq_count > 1) || (!(given_string.size() % 2) && odd_freq_count > 0)) {
-        std :: cout << "NO SOLUTION" << NEW_LINE;
-    } else {
-        std :: cout << string_rearrangement(given_string, alphabet_frequency) << NEW_LINE;
-    }
     return 0;
+}
+
+static bool check_palindrome(const std :: string & given_string) {
+    bool is_palindrome = true;
+    for(int start = 0, end = (int) given_string.size() - 1; start < end; ++start, --end) {
+        if(given_string[start] != given_string[end]) {
+            is_palindrome = false;
+            break;
+        }
+    }
+    return is_palindrome;
 }
 
 static std :: string string_rearrangement(std :: string & given_string, std :: vector <int> & alphabet_frequency) {
