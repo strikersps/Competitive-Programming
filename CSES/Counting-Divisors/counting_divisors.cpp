@@ -108,7 +108,6 @@ bool check_perfect_sequare(ll_t n) {
 #define MAX_LIMIT 1000001
 
 static void generate_prime_numbers(std :: vector <int> &);
-static void generate_prime_factors(const std :: vector <int> &, int, std :: map <int, ll_t> &);
 
 int main(void) {
     FAST_IO(0);
@@ -120,7 +119,7 @@ int main(void) {
         int n;
         std :: cin >> n;
         std :: map <int, ll_t> prime_factors;
-        generate_prime_factors(smallest_prime_factor, n, prime_factors);
+        for(int n_copy = n; n_copy != 1; ++prime_factors[smallest_prime_factor[n_copy]], n_copy /= smallest_prime_factor[n_copy]);
         ll_t divisors_count = 1LL;
         for(std :: pair <const int, ll_t> & mapping: prime_factors) {
             divisors_count *= (mapping.second + 1LL);
@@ -143,8 +142,4 @@ static void generate_prime_numbers(std :: vector <int> & smallest_prime_factor) 
             }
         }
     }
-}
-
-static void generate_prime_factors(const std :: vector <int> & smallest_prime_factor, int n, std :: map <int, ll_t> & prime_factors) {
-    for(; n != 1; ++prime_factors[smallest_prime_factor[n]], n /= smallest_prime_factor[n]);
 }
