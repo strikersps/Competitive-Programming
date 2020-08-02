@@ -122,13 +122,13 @@ static void execute_queuries(std :: vector <int> & sequence, const int n, int m)
     while(m--) {
         int op;
         std :: cin >> op;
-        if(op == sequence[0] || op == sequence[n - 1] || *std :: lower_bound(sequence.begin() + 1, sequence.begin() + n - 1, op) == op) {
-            int temp = sequence[0];
-            sequence[0] = sequence[n - 1];
-            sequence[n - 1] = temp;
+        if(op == sequence[0] || op == sequence.at(n - 1) || *std :: lower_bound(sequence.begin() + 1, sequence.begin() + n - 1, op) == op) {
+            int temp = sequence.at(0);
+            sequence.at(0) = sequence.at(n - 1);
+            sequence.at(n - 1) = temp;
         } else {
-            sum -= sequence[n - 1];
-            sequence[n - 1] = op;
+            sum -= sequence.at(n - 1);
+            sequence.at(n - 1) = op;
             sum += op;
         }
         std :: cout << sum << NEW_LINE;
