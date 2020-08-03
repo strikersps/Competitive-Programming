@@ -134,10 +134,13 @@ static ll_t compute_power(ll_t base, ll_t exponent) {
 }
 
 static ll_t compute_trailing_zeroes(ll_t n) {
-    ll_t count_trailing_zeroes = 0, power_of_5 = compute_power(5LL, 1LL);
-    for(int i = 2; n / power_of_5; ++i) {
-        count_trailing_zeroes += (n / power_of_5);
-        power_of_5 = compute_power(5, i);
+    if(n < 5LL) {
+        return 0LL;
+    }
+    ll_t count_trailing_zeroes = 0, power_of_five = compute_power(5LL, 1LL);
+    for(int i = 2; n / power_of_five; ++i) {
+        count_trailing_zeroes += (n / power_of_five);
+        power_of_five = compute_power(5, i);
     }
     return count_trailing_zeroes;
 }
