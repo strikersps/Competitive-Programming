@@ -114,9 +114,8 @@ int main(void) {
 
 static bool is_empty_piles_possible(const ll_t a, const ll_t b) {
     ll_t x = (2LL * a) - b, y = (2LL * b) - a;
-    if(x < 0LL || y < 0LL || x % 3LL || y % 3LL) {
+    if(x < 0LL || y < 0LL) {
         return false;
     }
-    x /= 3LL, y /= 3LL;
-    return abs(a - b) == abs(x - y);
+    return !(x % 3LL) && !(y % 3LL);
 }
