@@ -1,7 +1,7 @@
 # Editorial of [Number of Steps](https://www.hackerearth.com/practice/basic-programming/input-output/basics-of-input-output/practice-problems/algorithm/make-all-equal-90a21ab2/description/?layout=old)
 
 First of all you need to find what will be your target value to which every element of sequence `A` will reduce to.
-With an observation, it turns out that the target value to which you should first try to reduce all the elements of sequence `A` is the minimum element of `A` beacause that is going to give you the minimum number of operations as asked in the problem.
+With an observation, it turns out that the target value to which you should first try to reduce all the elements of sequence `A` is the minimum element of `A` because that is going to give you the minimum number of operations as asked in the problem.
 But there would be cases in which you cannot reduce every element in sequence `A` to `min(A)`. So in those cases you are going to check whether you can reduce it to `min(A) - 1` or `min(A) - 2` or `min(A) - 3 ... min(A) - i` where `i <= min(A)`.
 We try every target value in descending order as it is clear that the highest valid one will take fewer operations.
 
