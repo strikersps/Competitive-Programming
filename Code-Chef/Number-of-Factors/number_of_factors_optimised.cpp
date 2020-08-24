@@ -23,6 +23,7 @@
 #include <cstring>
 #include <deque>
 #include <iostream>
+#include <iomanip>
 #include <map>
 #include <numeric>
 #include <queue>
@@ -41,49 +42,22 @@ typedef long long ll_t;
 
 #define FAST_IO(value) std :: ios :: sync_with_stdio(value); std :: cin.tie(NULL); std :: cout.tie(NULL)
 
+// Constant Macros.
 #define MOD 1000000007 // Constant (prime number) used in most competitive programming problems to reduce the answer to a 32-bit integer.
-#define PI 3.141592653589793 // Number of digits(15) of Pi which JPL uses for Interplanetary Caculations.
+#define PI 3.141592653589793 // Number of digits(15) of Pi which JPL uses for Interplanetary Calculations.
 #define GOLDEN_RATIO 1.618033988749895 // Number of digits(15).
-#define INF_32_BIT_US_INT 0xFFFFFFFF // Maximum value which can be stored in an unsigned int (32-Bit).
-#define INF_64_BIT_US_INT 0xFFFFFFFFFFFFFFFF // Maximum value which can be stored in an unsigned long long (64-Bit).
+#define MAX_32_BIT_US_INT 0xFFFFFFFF // Maximum value which can be stored in an unsigned int (32-Bit).
+#define MAX_64_BIT_US_INT 0xFFFFFFFFFFFFFFFF // Maximum value which can be stored in an unsigned long long (64-Bit).
 #define NEW_LINE '\n' // Created because sometimes std :: endl makes the code slower due to clearance of buffer after printing new-line.
 
+// Debugging Macros.
+#define WATCH(x) std :: cerr << "Line Number: " << __LINE__ << ": " << #x << "-value: " << (x) << NEW_LINE
+
+// Mathematical Macros.
 #define COMPUTE_GCD(a, b) std :: __gcd((a), (b))
 #define COMPUTE_LCM(a, b) (a * ((b) / COMPUTE_GCD(a, b)))
 
-// C and C++ "%" operator is not a modular arithmetic operator rather it's a remainder operator which gives remainder when a / b.
-// Implementation is based on the fact that a % b = a - (b * (a / b)), where a = dividend, b = divisor, a / b = quotient.
-// Refer: https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
-// Time Complexity: O(1).
-ll_t compute_mod(ll_t a, ll_t b) {
-    assert(b > 0); // Denominator must be positive.
-    ll_t rem = a % b;
-    return rem < 0 ? b + rem : rem;
-}
-
-// The function computes the total number of divisors for the given n. i.e. d(n).
-// Time-Complexity: O(sqrt(n)).
-ll_t compute_total_divisors(ll_t n) {
-    ll_t total_divisors = 0;
-    for(ll_t i = 1; i <= (n / i); ++i) {
-        if(!(n % i)) {
-            if((n / i) == i) {
-                ++total_divisors;
-                continue;
-            }
-            total_divisors += 2;
-        }
-    }
-    return total_divisors;
-}
-
-// The code computes whether the given number (n) is a perfect square or not based on the fact that, a number is a perfect square if it has odd number of divisors.
-// Refer: https://math.stackexchange.com/questions/906159/a-number-is-a-perfect-square-if-and-only-if-it-has-odd-number-of-positive-diviso
-// Time-Complexity: O(sqrt(n)).
-bool check_perfect_sequare(ll_t n) {
-    return compute_total_divisors(n) % 2 ? true : false;
-}
-
+// Bit-Manipulation Macros.
 // Computes the number of set-bits in the binary representation of n (64-Bit).
 #define COMPUTE_SET_BITS(number) __builtin_popcountll(number)
 
@@ -93,51 +67,82 @@ bool check_perfect_sequare(ll_t n) {
 // Computes the number of leading zeroes in the binary representation of n (64-Bit). The value will be 64 - (number of bits required to represent n).
 #define COMPUTE_LEADING_ZEROES(number) __builtin_clzll(number)
 
-// Computes the number of trailing zeroes in the binary representation of n (64-Bit). The value will always be zeroe if n is odd.
+// Computes the number of trailing zeroes in the binary representation of n (64-Bit). The value will always be zero if n is odd.
 #define COMPUTE_TRAILING_ZEROES(number) __builtin_ctzll(number)
+
+// C and C++ "%" operator is not a modular arithmetic operator rather it's a remainder operator which gives remainder when a / b.
+// Implementation is based on the fact that a % b = a - (b * (a / b)), where a = dividend, b = divisor, a / b = quotient.
+// Refer: https://stackoverflow.com/questions/11720656/modulo-operation-with-negative-numbers
+// Time Complexity: O(1).
+ll_t compute_mod(ll_t a, ll_t b) {
+    assert(b > 0LL); // Denominator must be positive.
+    ll_t rem = a % b;
+    return rem < 0LL ? b + rem : rem;
+}
+
+// The function computes the total number of divisors for the given n.
+// Time-Complexity: O(sqrt(n)). NOTE: O(logn) algorithm also exist for computing the divisors of a number using Sieve.
+ll_t compute_total_divisors(ll_t n) {
+    ll_t total_divisors = 0LL;
+    for(ll_t i = 1; i <= (n / i); ++i) {
+        if(!(n % i)) {
+            if((n / i) == i) {
+                ++total_divisors;
+                continue;
+            }
+            total_divisors += 2LL;
+        }
+    }
+    return total_divisors;
+}
+
+// The code computes whether the given number (n) is a perfect square or not based on the fact that, a number is a perfect square if it has odd number of divisors.
+// Refer: https://math.stackexchange.com/questions/906159/a-number-is-a-perfect-square-if-and-only-if-it-has-odd-number-of-positive-diviso
+// Time-Complexity: O(sqrt(n)).
+bool check_perfect_sequare(ll_t n) {
+    return compute_total_divisors(n) % 2LL ? true : false;
+}
 
 /*END-OF CODE-TEMPLATE*/
 
-static void compute_prime_factors(int, std :: unordered_map <int, int> &);
+#define MAX_LIMIT 1000001
+
+static void generate_prime_numbers(std :: vector <int> &);
 
 int main(void) {
     FAST_IO(0);
+    std :: vector <int> smallest_prime_factors(MAX_LIMIT, 0);
+    generate_prime_numbers(smallest_prime_factors);
     int test;
     std :: cin >> test;
     while(test--) {
         int n;
         std :: cin >> n;
-        std :: unordered_map <int, int> prime_factors;
+        std :: map <int, int> prime_factors;
         for(int i = 0; i < n; ++i) {
             int number;
             std :: cin >> number;
-            compute_prime_factors(number, prime_factors);
+            for(; smallest_prime_factors[number]; ++prime_factors[smallest_prime_factors[number]], number /= smallest_prime_factors[number]);
         }
-        ll_t unique_divisors = 1LL;
-        for(const std :: pair <int, int> & prime_factor: prime_factors) {
-            unique_divisors *= (1LL + prime_factor.second);
+        ll_t unique_divisors_count = 1LL;
+        for(std :: pair <const int, int> & mapping: prime_factors) {
+            unique_divisors_count *= (1LL + mapping.second);
         }
-        std :: cout << unique_divisors << NEW_LINE;
+        std :: cout << unique_divisors_count << NEW_LINE;
     }
     return 0;
 }
 
-static void compute_prime_factors(int number, std :: unordered_map <int, int> & prime_factors) {
-    if(!(number % 2)) {
-        while(!(number % 2)) {
-            ++prime_factors[2];
-            number >>= 1;
-        }
-    }
-    for(int divisor = 3; divisor <= (number / divisor); divisor += 2) {
-        if(!(number % divisor)) {
-            while(!(number % divisor)) {
-                ++prime_factors[divisor];
-                number /= divisor;
+static void generate_prime_numbers(std :: vector <int> & smallest_prime_factors) {
+    std :: vector <bool> prime_numbers(MAX_LIMIT, true);
+    prime_numbers[0] = prime_numbers[1] = false;
+    for(ll_t i = 2LL; i < MAX_LIMIT; ++i) {
+        if(prime_numbers[i]) {
+            smallest_prime_factors[i] = i;
+            for(ll_t j = i * i; j < MAX_LIMIT; j += i) {
+                prime_numbers[j] = false;
+                smallest_prime_factors[j] = i;
             }
         }
-    }
-    if(number > 1) {
-        ++prime_factors[number];
     }
 }
