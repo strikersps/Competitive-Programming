@@ -6,4 +6,4 @@ If the input number is `315`, then output should be `3^2 5^1 7^1`.
 
 Ouput Format: `p1^a1 p2^a2 ... pn^an` where `pn` represent the prime number and `an` represents its power.
 
-* Reference: https://www.geeksforgeeks.org/prime-factorization-using-sieve-olog-n-multiple-queries/
+* Problem Reference: **https://www.geeksforgeeks.org/prime-factorization-using-sieve-olog-n-multiple-queries/**
