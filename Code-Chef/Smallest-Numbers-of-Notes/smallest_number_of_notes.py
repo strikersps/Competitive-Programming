@@ -1,36 +1,34 @@
-'''
+"""
 Problem Statement: https://www.codechef.com/problems/FLOW005
 Author: striker
-'''
+"""
 
-def total_number_of_notes(money_rs):
-    number_of_notes = 0
-    while money_rs != 0:
-        if money_rs >= 100:
-            number_of_notes += int(money_rs / 100)
-            money_rs %= 100
-        elif money_rs >= 50:
-            number_of_notes += int(money_rs / 50)
-            money_rs %= 50
-        elif money_rs >= 10:
-            number_of_notes += int(money_rs / 10)
-            money_rs %= 10
-        elif money_rs >= 5:
-            number_of_notes += int(money_rs / 5)
-            money_rs %= 5
-        elif money_rs >= 2:
-            number_of_notes += int(money_rs / 2)
-            money_rs %= 2
+def compute_smallest_numbers_of_notes(amount: int) -> int:
+    total_notes = 0
+    while amount:
+        if amount >= 100:
+            total_notes += amount // 100
+            amount %= 100
+        elif amount >= 50:
+            total_notes += amount // 50
+            amount %= 50
+        elif amount >= 10:
+            total_notes += amount // 10
+            amount %= 10
+        elif amount >= 5:
+            total_notes += amount // 5
+            amount %= 5
+        elif amount >= 2:
+            total_notes += amount // 2
+            amount %= 2
         else:
-            number_of_notes += money_rs
-            money_rs = 0
-    return number_of_notes
+            total_notes += amount
+            break
+    return total_notes
 
 def main():
-    test = int(input())
-    for _ in range(test):
-        money_rs = int(input())
-        print(str(total_number_of_notes(money_rs)))
+    for _ in range(int(input().strip())):
+        print(compute_smallest_numbers_of_notes(int(input().strip())))
 
 if __name__ == "__main__":
     main()
