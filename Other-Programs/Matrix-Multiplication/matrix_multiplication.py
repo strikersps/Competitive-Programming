@@ -6,7 +6,7 @@ Author: striker
 def display_matrix(matrix: list) -> None:
     for row in matrix:
         for data in row:
-            print(f'{data: 5}', end = ' ')
+            print(f'{data: >5}', end = ' ')
         print()
 
 def compute_matrix_multiplication(matrixA: list, matrixB: list, n: int, m: int) -> list:
