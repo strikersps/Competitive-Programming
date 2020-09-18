@@ -18,21 +18,21 @@ def compute_matrix_multiplication(matrixA: list, matrixB: list, n: int, m: int) 
     return result_matrix
 
 def main():
-    a, b = map(int, input().strip().split())
-    matrixA = [list(map(int, input().strip().split())) for row in range(a)]
+    matrixA_rows, matrixA_cols = map(int, input().strip().split())
+    matrixA = [list(map(int, input().strip().split())) for row in range(matrixA_rows)]
     print("Matrix-A:")
     display_matrix(matrixA)
-    c, d = map(int, input().strip().split())
-    matrixB = [list(map(int, input().strip().split())) for row in range(c)]
+    matrixB_rows, matrixB_cols = map(int, input().strip().split())
+    matrixB = [list(map(int, input().strip().split())) for row in range(matrixB_rows)]
     print("Matrix-B:")
     display_matrix(matrixB)
     try:
-        assert(a == d) # Matrix Multiplication can only be performed if number of rows in matrix-A == number of cols in matrix-B.
+        assert(matrixA_rows == matrixB_cols) # Matrix Multiplication can only be performed if number of rows in matrix-A == number of cols in matrix-B.
         print("Result-Matrix:")
-        display_matrix(compute_matrix_multiplication(matrixA, matrixB, a, d))
+        display_matrix(compute_matrix_multiplication(matrixA, matrixB, matrixA_rows, matrixB_cols))
     except AssertionError:
         print("Basic Condition of Matrix-Multiplication is not Satisfied."
-        "\ni.e. Matrix Multiplication can only be perfomed if number of rows in matrix-A == number of cols in matrix-B.")
+        "\ni.e. Matrix Multiplication can only be perfomed if Number of rows in matrix-A == Number of cols in matrix-B.")
 
 if __name__ == "__main__":
     main()
