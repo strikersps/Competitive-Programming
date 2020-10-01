@@ -3,28 +3,25 @@ Problem Statement: https://www.hackerrank.com/challenges/piling-up/problem
 Author: striker
 """
 
-from collections import deque
+def is_decreasing_order(sequence: list) -> bool:
+    return all(sequence[index] >= sequence[index + 1] for index in range(len(sequence) - 1))
 
-def check_decreasing_order(positions: list) -> bool:
-    return all(positions[index] >= positions[index + 1] for index in range(len(positions) - 1))
-
-def play_game(cube_lengths: deque) -> list:
-    positions = list()
-    while cube_lengths:
-        if len(cube_lengths) > 1:
-            right_data, left_data = cube_lengths.pop(), cube_lengths.popleft()
-            if left_data >= right_data:
-                positions.append(left_data)
-            else:
-                positions.append(right_data)
-        else:
-            positions.append(cube_lengths.pop())
-    return positions
+def check_stack_possible(cube_side_lengths: list) -> bool:
+    stacked_cubes = list()
+    start = 0; end = len(cube_side_lengths) - 1
+    while(start <= end):
+        if cube_side_lengths[start] > cube_side_lengths[end]:
+            stacked_cubes.append(cube_side_lengths[start])
+            start += 1
+            continue
+        stacked_cubes.append(cube_side_lengths[end])
+        end -= 1
+    return is_decreasing_order(stacked_cubes)
 
 def main():
     for _ in range(int(input().strip())):
         n = int(input().strip())
-        print("Yes" if check_decreasing_order(play_game(deque(map(int, input().strip().split())))) else "No")
+        print("Yes" if check_stack_possible(list(map(int, input().strip().split()))) else "No")
 
 if __name__ == "__main__":
     main()
