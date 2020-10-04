@@ -41,8 +41,8 @@ int main(void) {
     int n;
     std :: cin >> n;
     std :: vector <int> bracket_sequence(n, 0);
-    for(int i = 0; i < n; ++i) {
-        std :: cin >> bracket_sequence[i];
+    for(int & number: bracket_sequence) {
+        std :: cin >> number;
     }
     std :: vector <int> & answer = compute_answer(bracket_sequence, n);
     for(const auto & ans : answer) {
