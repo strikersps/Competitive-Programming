@@ -2,21 +2,22 @@
     Author: striker
 */
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<inttypes.h>
-#include<assert.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <inttypes.h>
+#include <assert.h>
 
 int main(void) {
-    uint32_t n;
-    scanf("%"SCNu32, &n);
+    int32_t n;
+    scanf("%"SCNd32, &n);
     assert(n > 1 && n < 100001);
-    uint8_t *const bracket_sequence = calloc(n,sizeof(uint8_t));
+    uint8_t *const bracket_sequence = calloc((size_t) n, sizeof(uint8_t));
     if(bracket_sequence) {
-        int32_t open_cnt,max_depth,number_of_symbols,max_number_of_symbols;
-        int32_t index_depth,index_max_symbols;
+        int32_t open_cnt, max_depth, number_of_symbols, max_number_of_symbols;
+        int32_t index_depth, index_max_symbols;
+        index_depth = index_max_symbols = -1;
         open_cnt = max_depth = number_of_symbols = max_number_of_symbols = 0;
-        for(uint32_t i = 0; i < n; ++i) {
+        for(int32_t i = 0; i < n; ++i) {
             scanf("%"SCNu8, &bracket_sequence[i]);
             assert(bracket_sequence[i] > 0 && bracket_sequence[i] < 3);
             ++number_of_symbols;
@@ -37,7 +38,7 @@ int main(void) {
                 }
             }
         }
-        printf("%"PRIu32" %"PRIu32" %"PRIu32" %"PRIu32"\n", max_depth,(index_depth + 1),max_number_of_symbols,(index_max_symbols + 1));
+        printf("%"PRIu32" %"PRIu32" %"PRIu32" %"PRIu32"\n", max_depth, (index_depth + 1), max_number_of_symbols, (index_max_symbols + 1));
         free(bracket_sequence);
     } else {
         fprintf(stderr,"Not able to allocate %lu bytes of memory\n", (n * sizeof(uint8_t)));
