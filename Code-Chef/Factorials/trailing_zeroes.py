@@ -6,7 +6,7 @@ Author: striker
 def compute_trailing_zeroes(n):
     count_trailing_zeroes = 0
     i = 5
-    while n // i >= 1:
+    while n // i:
         count_trailing_zeroes += (n // i)
         i *= 5
     return count_trailing_zeroes
