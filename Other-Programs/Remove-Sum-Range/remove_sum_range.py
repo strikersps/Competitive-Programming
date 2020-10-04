@@ -10,11 +10,11 @@ def summer_69(sequence: list) -> int:
         if number == 6:
             six_found = True
             continue
-        if number == 9:
-            six_found = False
-            continue
         if not six_found:
             sequence_sum += number
+            continue
+        if number == 9:
+            six_found = False
     return sequence_sum
 
 def main():
