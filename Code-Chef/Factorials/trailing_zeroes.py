@@ -12,8 +12,8 @@ def compute_trailing_zeroes(n):
     return count_trailing_zeroes
 
 def main():
-    for test in range(int(input().strip())):
-        print("{0}".format(compute_trailing_zeroes(int(input().strip()))))
+    for _ in range(int(input().strip())):
+        print(compute_trailing_zeroes(int(input().strip())))
 
 if __name__ == "__main__":
     main()
