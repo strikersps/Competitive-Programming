@@ -4,8 +4,7 @@ Author: striker
 '''
 
 def main():
-    limit = int(input().rstrip())
-    width = len("{0: b}".format(1, limit))
+    limit = int(input().strip())
     for number in range(limit + 1):
         print("{0:{width}d} {0:{width}o} {0:{width}X} {0:{width}b}".format(number, width = width))
 
