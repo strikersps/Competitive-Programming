@@ -10,7 +10,7 @@ def check_anagram(string1, string2):
 
 def main():
     for test in range(int(input().strip())):
-        print("YES" if check_anagram(input().strip(), input().strip()) else "NO")
+        print("YES" if check_anagram(input().strip().replace(" ", "").lower(), input().strip().replace(" ", "").lower()) else "NO")
 
 if __name__ == "__main__":
     main()
