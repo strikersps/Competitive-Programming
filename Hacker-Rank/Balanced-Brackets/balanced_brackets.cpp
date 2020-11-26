@@ -56,21 +56,16 @@ int main(void) {
 static bool check_balance_bracket(const std :: string & bracket_sequence) {
     std :: stack <char> track_bracket_type;
     bool is_balance = true;
-    for(const char & bracket: bracket_sequence) {
-        if((bracket == ')' || bracket == ']' || bracket == '}') && track_bracket_type.empty()) {
-            is_balance = false;
-            break;
-        }
+    for(const auto & bracket: bracket_sequence) {
         if(bracket == '(' || bracket == '[' || bracket == '{') {
             track_bracket_type.push(bracket);
             continue;
         }
-        if((track_bracket_type.top() == '(' && bracket == ')') || (track_bracket_type.top() == '{' && bracket == '}') || (track_bracket_type.top() == '[' && bracket == ']')) {
-            track_bracket_type.pop();
-            continue;
+        if(track_bracket_type.empty() || (bracket == ')' && track_bracket_type.top() != '(') || (bracket == ']' && track_bracket_type.top() != '[') || (bracket == '}' && track_bracket_type.top() != '{')) {
+            is_balance = false;
+            break;
         }
-        is_balance = false;
-        break;
+        track_bracket_type.pop();
     }
     if(!track_bracket_type.empty()) {
         is_balance = false;
