@@ -1,0 +1,15 @@
+Source String: INTENTION
+Target String: EXECUTION
+Edit Distance: 8
+Source String: CATS
+Target String: FAST
+Edit Distance: 4
+Source String: KITTEN
+Target String: SITTING
+Edit Distance: 5
+Source String: GEEK
+Target String: GESEK
+Edit Distance: 1
+Source String: FLOMAX
+Target String: VOLMAX
+Edit Distance: 4
