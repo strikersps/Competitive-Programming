@@ -3,7 +3,7 @@
 [![GitHub Issues](https://img.shields.io/github/issues/strikersps/Competitive-Programming?style=flat-square)](https://github.com/strikersps/Competitive-Programming/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/strikersps/Competitive-Programming?style=flat-square)](https://github.com/strikersps/Competitive-Programming/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/strikersps/Competitive-Programming?style=flat-square)](https://github.com/strikersps/Competitive-Programming/network/members)
-![Competitive Programming Image](https://www.pngegg.com/en/png-ypljb)
+![Competitive Programming Image](https://github.com/strikersps/Competitive-Programming/blob/master/Competitive-Programming-Image.jpg)
 * The repository consists of **Accepted** solutions of the problems asked in Online Judges/Competitive Programming websites like SPOJ, CodeChef, CodeForces, Hacker-Rank, Hacker-Earth, Project Euler, etc in `C/C++` and `Python`.
 * To find out the problem statement related to solution, refer to the problem link at the top of source-code.  
 
