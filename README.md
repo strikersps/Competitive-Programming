@@ -11,7 +11,7 @@
 ### :white_check_mark: [Contribution Guidelines](https://github.com/strikersps/Competitive-Programming/blob/master/CONTRIBUTING.md)
 * As a programmer I firmly believe in **"Writing Clean and Easy To Understand Code"** and if you are contributing to this repository, I hope you will also share the same vision.
 
-* Moreover, if you find any errors in the programs/source-code presented on this repository related to Logical Errors, Syntax Errors, SIGSEGV, SIGFPE, SIGABRT, NZEC Error, please create an issue for the same.
+* Moreover, if you find any errors in the programs/source-codes presented in this repository related to Logical Errors, Syntax Errors, SIGSEGV, SIGFPE, SIGABRT, NZEC Error, please create an issue for the same.
 * If you have a better algorithm or a logical way of solving a problem then do contribute to the repository.  
 
 **Thanks For Reading**  
