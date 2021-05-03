@@ -1,5 +1,5 @@
 # Competitive Programming Portfolio
-[![GitHub Contributors](https://img.shields.io/github/contributors/strikersps/Competitive-Programming.svg)](https://GitHub.com/strikersps/badges/graphs/contributors/)
+[![GitHub Contributors](https://img.shields.io/github/contributors/strikersps/Competitive-Programming.svg)](https://github.com/strikersps/Competitive-Programming/graphs/contributors)
 [![GitHub Issues](https://img.shields.io/github/issues/strikersps/Competitive-Programming)](https://github.com/strikersps/Competitive-Programming/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/strikersps/Competitive-Programming?style=flat-square)](https://github.com/strikersps/Competitive-Programming/stargazers)
 [![GitHub Forks](https://img.shields.io/github/forks/strikersps/Competitive-Programming?style=flat-square)](https://github.com/strikersps/Competitive-Programming/network/members)
