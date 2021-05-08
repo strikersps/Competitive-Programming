@@ -4,7 +4,6 @@ Author: striker
 """
 
 from functools import reduce
-from itertools import accumulate
 
 def compute_gcd(a: int, b: int) -> int:
     return a if not b else compute_gcd(b, a % b)
