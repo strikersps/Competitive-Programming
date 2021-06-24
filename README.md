@@ -1,4 +1,8 @@
 # Competitive Programming Portfolio
+[![C-Programming-Badge](https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white)](https://en.wikipedia.org/wiki/C_(programming_language))
+[![C++ Programming Badge](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)](https://en.wikipedia.org/wiki/C%2B%2B)
+[![Python-Programming-Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+
 [![GitHub Contributors](https://img.shields.io/github/contributors/strikersps/Competitive-Programming.svg)](https://github.com/strikersps/Competitive-Programming/graphs/contributors)
 [![GitHub Issues](https://img.shields.io/github/issues/strikersps/Competitive-Programming)](https://github.com/strikersps/Competitive-Programming/issues)
 [![GitHub Stars](https://img.shields.io/github/stars/strikersps/Competitive-Programming?style=flat-square)](https://github.com/strikersps/Competitive-Programming/stargazers)
