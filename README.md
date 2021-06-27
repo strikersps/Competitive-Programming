@@ -20,4 +20,4 @@
 - Please refer to [`CONTRIBUTING.md`](https://github.com/strikersps/Competitive-Programming/blob/master/CONTRIBUTING.md) file for more information.
 
 ## 3. License  
-![GPLV3](https://img.shields.io/github/license/strikersps/Competitive-Programming?style=for-the-badge)
+[![GPL-V3-Badge](https://img.shields.io/github/license/strikersps/Competitive-Programming?color=red&style=for-the-badge)](https://github.com/strikersps/Competitive-Programming/blob/master/LICENSE)
