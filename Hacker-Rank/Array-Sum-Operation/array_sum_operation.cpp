@@ -118,19 +118,19 @@ int main(void) {
 }
 
 static void execute_queuries(std :: vector <int> & sequence, const int n, int m) {
-    ll_t sum = std :: accumulate(sequence.begin(), sequence.end(), 0LL);
+    ll_t sequence_sum = std :: accumulate(sequence.begin(), sequence.end(), 0LL);
     while(m--) {
-        int op;
-        std :: cin >> op;
-        if(op == sequence[0] || op == sequence.at(n - 1) || *std :: lower_bound(sequence.begin() + 1, sequence.begin() + n - 1, op) == op) {
-            int temp = sequence.at(0);
+        int q_val;
+        std :: cin >> q_val;
+        if(sequence.at(0) == q_val || sequence.at(n - 1) == q_val || std :: binary_search(sequence.begin() + 1, sequence.end() - 1, q_val)) {
+            int temp_data = sequence.at(0);
             sequence.at(0) = sequence.at(n - 1);
-            sequence.at(n - 1) = temp;
+            sequence.at(n - 1) = temp_data;
         } else {
-            sum -= sequence.at(n - 1);
-            sequence.at(n - 1) = op;
-            sum += op;
+            sequence_sum -= sequence.at(n - 1);
+            sequence.pop_back(); sequence.push_back((ll_t) q_val);
+            sequence_sum += q_val;
         }
-        std :: cout << sum << NEW_LINE;
+        std :: cout << sequence_sum << NEW_LINE;
     }
 }
