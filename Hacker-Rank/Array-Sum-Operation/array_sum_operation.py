@@ -1,7 +1,5 @@
-"""
-Problem Statement: https://www.hackerrank.com/contests/hack-the-interview-vi-asia-pacific/challenges/maximum-sum-10-1/problem
-Author: striker
-"""
+# Problem Statement: https://www.hackerrank.com/contests/hack-the-interview-vi-asia-pacific/challenges/maximum-sum-10-1/problem
+# Author: striker
 
 from itertools import count, islice
 
