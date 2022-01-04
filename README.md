@@ -19,5 +19,5 @@
 - If you have a better algorithm or a logical way of solving a problem then do contribute to the repository.  
 - Please refer to [`CONTRIBUTING.md`](https://github.com/strikersps/Competitive-Programming/blob/master/CONTRIBUTING.md) file for more information.
 
-## 3. License  
+###### GNU General Public License v3.0
 [![GPL-V3-Badge](https://img.shields.io/github/license/strikersps/Competitive-Programming?color=red&style=for-the-badge)](https://github.com/strikersps/Competitive-Programming/blob/master/LICENSE)
